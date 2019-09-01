@@ -10,7 +10,9 @@
       </ul>
     </div>
   <% end %>
-
+  <p><%= form.string :username %></p>
+  <p><%= form.string :email %></p>
+  <p><%= form.password_field :password %></p>
   <div class="actions">
     <%= form.submit %>
   </div>
