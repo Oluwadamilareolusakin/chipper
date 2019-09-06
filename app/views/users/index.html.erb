@@ -3,10 +3,14 @@
 <h1>Users</h1>
 
 <div class="users-table">
-  <div class="user">
+  <div class="user row">
     <% @users.each do |user| %>
+        <p><%= user.name %></p>
         <p><%= user.username %></p>
         <p><%= user.email %></p>
+        <p><%= user.age %></p>
+        <p><%= user.nationality %></p>
+        <p><%= user.gender %></p>
         <p><%= link_to 'Show', user %></p>
         <p><%= link_to 'Edit', edit_user_path(user) %></p>
         <p><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></p>

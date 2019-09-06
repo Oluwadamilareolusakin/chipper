@@ -10,13 +10,9 @@
   </head>
 
   <body>
+    <%= flash.notice %>
     <nav>
-      <% if logged_in? %>
-        <%= "Sign in as #{current_user.email}" %>
-        <%= link_to 'Sign out', logout_path %>
-      <%else%>
-        <%= link_to "Sign in", login_path %>
-      <% end %>
+      
     </nav>
     <%= yield %>
   </body>
