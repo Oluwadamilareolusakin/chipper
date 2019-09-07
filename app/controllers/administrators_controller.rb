@@ -1,7 +1,6 @@
 class AdministratorsController < ApplicationController
   include AdministratorsHelper
   before_action :set_administrator, only: [:show, :edit, :update, :destroy]
-  include AdministratorsHelper
 
   # GET /administrators
   # GET /administrators.json
@@ -69,12 +68,5 @@ class AdministratorsController < ApplicationController
       @administrator = Administrator.find(params[:id])
     end
 
-<<<<<<< HEAD
-    # Never trust parameters from the scary internet, only allow the white list through.
-    # def administrator_params
-    #   params.fetch(:administrator, {})
-    # end
-=======
     
->>>>>>> reset-dev
 end
