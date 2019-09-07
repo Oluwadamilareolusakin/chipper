@@ -8,10 +8,10 @@ one:
 # column: value
   username: String
   name: String
-  email: String2
+  email: String
 
 two:
 # column: value
   name: String
   username: String
-  email: String3
+  email: String
