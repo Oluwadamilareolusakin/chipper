@@ -9,4 +9,9 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     get users_path
     assert :success
   end
+
+  test 'should show user' do
+    get user_path(@user)
+    assert :success
+  end 
 end
