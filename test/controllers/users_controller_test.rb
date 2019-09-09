@@ -35,6 +35,19 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
   test 'should get edit' do 
     get edit_user_path(@user)
-    assert :success
+    assert :success 
+  end
+
+  test 'should update user' do
+    put user_path(@user), params: { user: { username: @user.username, 
+                                              name: @user.name, 
+                                              email: @user.email,
+                                              gender: @user.gender,
+                                              nationality: @user.nationality,
+                                              age: @user.age} }
+    assert_redirected_to @user
+  end
+
+  test 'should destroy user' do
   end
 end
