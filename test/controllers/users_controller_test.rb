@@ -14,4 +14,27 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     get user_path(@user)
     assert :success
   end 
+
+  test 'should get new' do
+    get new_user_path
+    assert :success
+  end
+
+  test 'should create new user' do 
+    assert_difference('User.count') do 
+      post users_path, params: { user: { username: 'String256',
+                                          name: 'String',
+                                          email: 'String@string.com',  
+                                          gender: 'Male',
+                                          nationality: 'Nigerian',
+                                          age: '42' }}
+    end
+
+    assert_redirected_to user_path(User.last)
+  end
+
+  test 'should get edit' do 
+    get edit_user_path(@user)
+    assert :success
+  end
 end
