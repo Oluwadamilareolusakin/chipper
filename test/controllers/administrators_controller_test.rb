@@ -26,7 +26,7 @@ class AdministratorsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create an administrator" do
     assert_difference('Administrator.count') do
-      post administrators_path, params: { administrator:{ email: @administrator.email, name: @administrator.name, username: @administrator.username, password: "Administrator12!" } }
+      post administrators_path, params: { administrator:{ email: 'new@new.com', name: 'New Admin', username: 'NewAdminUserna', password: "Administrator12!@#" } }
     end
 
     assert_redirected_to administrator_path(Administrator.last)
