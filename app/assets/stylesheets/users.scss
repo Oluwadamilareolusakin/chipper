@@ -1,3 +1,56 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+%background-image{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+%teal-button{
+    background-color: teal;
+    padding: .3em 1.2em;
+    border-radius: .3em;
+    color: white;
+}
+
+.user-profile-header{
+    @extend %background-image;
+    width: 100%;
+    height: 300px;
+    background-image: url('1.jpg');
+    padding: 1em 0;
+    position: relative;
+
+    .edit-user-button{
+        @extend %teal-button;
+        position: absolute;
+        right: 5%;
+    }
+
+    .user-profile-info{
+        position: absolute;
+        bottom: 3%;
+        justify-content: space-between;
+        left: 5%;
+    }
+
+    .user-profile-image{
+        @extend %background-image;
+        border-radius: 50%;
+        border: 1px solid white;
+        background-image: url('1.jpg');
+        width: 100px;
+        height: 100px;
+    }
+
+    .user-info{
+        justify-self: center;
+        margin-left: 1em;
+    }
+
+    .count-title, .count-data{
+        text-align: center;
+    }
+}
