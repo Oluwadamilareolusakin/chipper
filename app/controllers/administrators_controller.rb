@@ -29,7 +29,7 @@ class AdministratorsController < ApplicationController
     @administrator = Administrator.new(administrator_params)
     respond_to do |format|
       if @administrator.save
-        format.html { redirect_to users_path, notice: 'Administrator was successfully created.' }
+        format.html { redirect_to @administrator, notice: 'Administrator was successfully created.' }
         format.json { render :show, status: :created, location: @administrator }
       else
         format.html { render :new }
