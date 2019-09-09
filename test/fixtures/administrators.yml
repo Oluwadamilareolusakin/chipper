@@ -8,7 +8,7 @@ one:
 # column: value
   username: String
   name: String
-  email: String2
+  email: String@string.com
 
 two:
 # column: value
