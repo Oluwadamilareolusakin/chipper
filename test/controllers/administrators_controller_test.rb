@@ -32,6 +32,19 @@ class AdministratorsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to administrator_path(Administrator.last)
   end
 
+  test 'should update administrator' do
+    patch administrator_path(@administrator), params: { administrator: { username: @administrator.username, password: 'Administrator12#', email: @administrator.email, name: @administrator.name } }
+    assert_redirected_to @administrator
+  end
+
+  test 'should delete administrator' do 
+    assert_difference('Administrator.count', -1) do
+      delete administrator_path(@administrator)
+    end
+
+    assert_redirected_to administrators_path
+  end
+
 
   # setup do
   #   @administrator = administrators(:one)
