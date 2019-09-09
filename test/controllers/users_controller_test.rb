@@ -2,47 +2,54 @@ require 'test_helper'
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @user = users(:one)
+    @user = users( :one )
   end
 
-  test "should get index" do
-    get users_url
-    assert_response :success
+  test 'should get index' do
+    get users_path
+    assert :success
   end
 
-  test "should get new" do
-    get new_user_url
-    assert_response :success
+  test 'should show user' do
+    get user_path(@user)
+    assert :success
+  end 
+
+  test 'should get new' do
+    get new_user_path
+    assert :success
   end
 
-  test "should create user" do
-    assert_difference('User.count') do
-      post users_url, params: { user: { email: @user.email, username: @user.username } }
+  test 'should create new user' do 
+    assert_difference('User.count') do 
+      post users_path, params: { user: { username: 'String256',
+                                          name: 'String',
+                                          email: 'String@string.com',  
+                                          gender: 'Male',
+                                          nationality: 'Nigerian',
+                                          age: '42' }}
     end
 
-    assert_redirected_to user_url(User.last)
+    assert_redirected_to user_path(User.last)
   end
 
-  test "should show user" do
-    get user_url(@user)
-    assert_response :success
+  test 'should get edit' do 
+    get edit_user_path(@user)
+    assert :success 
   end
 
-  test "should get edit" do
-    get edit_user_url(@user)
-    assert_response :success
+  test 'should update user' do
+    put user_path(@user), params: { user: { username: @user.username, 
+                                              name: @user.name, 
+                                              email: @user.email,
+                                              gender: @user.gender,
+                                              nationality: @user.nationality,
+                                              age: @user.age} }
+    assert_redirected_to @user
   end
 
-  test "should update user" do
-    patch user_url(@user), params: { user: { email: @user.email, username: @user.username } }
-    assert_redirected_to user_url(@user)
-  end
-
-  test "should destroy user" do
-    assert_difference('User.count', -1) do
-      delete user_url(@user)
-    end
-
-    assert_redirected_to users_url
+  test 'should destroy user' do
+    delete user_path(@user)
+    assert_redirected_to users_path
   end
 end
