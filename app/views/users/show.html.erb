@@ -1,40 +1,47 @@
 <p id="notice"><%= notice %></p>
 
 <div class="user-profile-header">
-      <%= link_to 'Edit your profile', edit_user_path(@user), class: 'edit-user-button' %> 
+  <%= link_to 'Edit your profile', edit_user_path(@user), class: 'edit-user-button' %> 
 
   <div class="user-profile-info row">
     <div class="user-profile-image">
 
     </div>
-    <div class="user-info">
-        <p>
-          <strong>
-            <%= @user.username %>
-          </strong>
-        </p>
-        <p>
-          <%= @user.name %>
-        </p>
-
-    </div>
-    <div class="followers-count">
-      <div class="count-title">
-        <p>Followers</p>
+    <div class="user-name-follow-button-and-username column">
+      <div class="name-username-container">
+          <p>
+            <strong>
+              <%= @user.username %>
+            </strong>
+          </p>
+          <p>
+            <%= @user.name %>
+          </p>
       </div>
-      <div class="count-data">
-        <p>0</p>
+      <div class="profile-count-container row">
+        <div class="count">
+          <div class="count-title">
+            <p>Followers</p>
+          </div>
+          <div class="count-data">
+            <p>0</p>
+          </div>
+        </div>
+        <div class="count">
+          <div class="count-title">
+            <p>Followers</p>
+          </div>
+          <div class="count-data">
+            <p>0</p>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="following-count">
-      <div class="count-title">
-        <p>Followers</p>
-      </div>
-      <div class="count-data">
-        <p>0</p>
+      <div class="profile-follow-container row">
+        <%= link_to  "Follow", edit_user_path(@user), class:'profile-follow-button'%>
       </div>
     </div>
   </div>
 
+  </div>
 </div>
 

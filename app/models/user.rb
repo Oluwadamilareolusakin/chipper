@@ -4,5 +4,5 @@ class User < ApplicationRecord
     validates :email, presence: true, uniqueness: true
     validates :gender, presence: true
     validates :nationality, presence: true
-    validates :username, presence: true, length: { maximum: 15 }
+    validates :username, presence: true, length: { maximum: 15 }, uniqueness: true
 end
