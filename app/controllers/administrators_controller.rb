@@ -27,15 +27,9 @@ class AdministratorsController < ApplicationController
   # POST /administrators.json
   def create
     @administrator = Administrator.new(administrator_params)
-    respond_to do |format|
-      if @administrator.save
-        format.html { redirect_to @administrator, notice: 'Administrator was successfully created.' }
-        format.json { render :show, status: :created, location: @administrator }
-      else
-        format.html { render :new }
-        format.json { render json: @administrator.errors, status: :unprocessable_entity }
-      end
-    end
+    @administrator.save
+    redirect_to @administrator if @administrator.save
+    render :new unless @administrator.save
   end
   
   # PATCH/PUT /administrators/1

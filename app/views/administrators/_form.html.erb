@@ -1,3 +1,4 @@
+<div class="user-admin-data-form row">
 <%= form_with(model: administrator, local: true) do |form| %>
   <% if administrator.errors.any? %>
     <div id="error_explanation">
@@ -18,3 +19,4 @@
     <%= form.submit %>
   </div>
 <% end %>
+</div>

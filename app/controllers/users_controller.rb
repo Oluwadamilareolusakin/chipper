@@ -17,7 +17,7 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
         @user.save
         redirect_to user_path(@user) if @user.save
-        render :new
+        render :new unless @user.save
     end
     
     def edit

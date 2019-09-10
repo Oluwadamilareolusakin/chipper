@@ -1,25 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Administrators</h1>
+<h1 class = "admin-users-table-title center-aligned-text">Administrators</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
+
+<table class="users-table row">
+  <tr>
+    <td class="users-table-header">Full name</td>
+    <td class="users-table-header">Username</td>
+    <td class="users-table-header">Email</td>
+    <td class="users-table-header">View Profile</td>
+    <td class="users-table-header">Edit User</td>
+    <td class="users-table-header">Delete User</td>
+  </tr>
+  <% @administrators.each do |administrator| %>
+    <tr class="user">
+      <td class="user-admin-dashboard-details"><%= administrator.name %></td>
+      <td class="user-admin-dashboard-details"><%= administrator.username %></td>
+        <td class="user-admin-dashboard-details"><%= administrator.email %></td>
+        <td class="user-admin-dashboard-controls admin-user-show"><%= link_to 'Show', administrator %></td>
+        <td class="user-admin-dashboard-controls admin-user-edit"><%= link_to 'Edit', edit_administrator_path(administrator) %></td>
+        <td class="user-admin-dashboard-controls admin-user-delete"><%= link_to 'Destroy', administrator, method: :delete, data: { confirm: 'Are you sure?' }%></td>
     </tr>
-  </thead>
-
-  <tbody>
-    <% @administrators.each do |administrator| %>
-      <tr>
-        <td><%= link_to 'Show', administrator %></td>
-        <td><%= link_to 'Edit', edit_administrator_path(administrator) %></td>
-        <td><%= link_to 'Destroy', administrator, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+  <% end %>
 </table>
-
 <br>
-
-<%= link_to 'New Administrator', new_administrator_path %>
+<div class="new-admin-user-button-container row container">
+  <%= link_to 'New Administrator', new_administrator_path, class: 'new-admin-user-button' %>
+</div>
