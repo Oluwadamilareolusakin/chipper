@@ -15,8 +15,12 @@ class UsersController < ApplicationController
     
     def create
         @user = User.new(user_params)
-        @user.save
-        redirect_to user_path(@user)
+        if @user.save
+            flash[:success] = "Welcome to Chipper #{@user.name}" 
+            redirect_to user_path(@user) 
+        else
+            render :new
+        end
     end
     
     def edit
@@ -26,9 +30,7 @@ class UsersController < ApplicationController
     def update
         @user = User.find(params[:id])
         @user.update(user_params)
-        @user.save
-
-        redirect_to user_path(@user)
+        redirect_to user_path(@user) if @user.save
     end
 
 

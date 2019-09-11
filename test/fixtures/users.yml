@@ -8,7 +8,7 @@ one:
 # column: value
   username: String
   name: String
-  email: String1  
+  email: string@string.com  
   gender: String
   nationality: String
   age: Integer
@@ -16,8 +16,8 @@ one:
 two:
 # column: value
   name: String
-  username: String
-  email: String
+  username: String2
+  email: string2@string.com
   gender: String
   nationality: String
   age: Integer
