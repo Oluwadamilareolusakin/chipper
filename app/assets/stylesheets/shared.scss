@@ -1,0 +1,86 @@
+@import 'component_styles';
+
+.center-aligned-text{
+    text-align: center;
+}
+
+.admin-users-table-title{
+    font-size: 2em;
+    padding: 1em 0 0 0;
+}
+
+.user-admin-data-form{
+    width: 100%;
+    justify-content: center;
+    padding: 1em 0 0 0;
+
+    form{
+        box-sizing: border-box;
+        width: 40%;
+    }
+
+    input{
+        box-shadow: 0 0 .2em .1em rgba(0, 0, 0, 0.274);
+        padding: 0 .5em;
+        height: 2.3em;
+    }
+
+    .field, input{
+        width: 100%;
+        border: none;
+        margin: .3em 0;
+    }
+
+    .actions{
+        input{
+            @extend %teal-button;
+        }
+    }
+
+    h5{
+        margin: -.8em 0 0 0;
+        font-size: .6em;
+        color: teal;
+    }
+}
+
+.new-admin-user-button-container{
+    justify-content: flex-end;
+    position: absolute;
+    top: 6%;
+    width:80%;
+    .new-admin-user-button{
+        padding: .5em 1em;
+        margin-left: .8em; 
+        @extend %teal-button;
+    }
+}
+
+pre.debug_dump{
+    border: 1px solid rgba(209, 209, 209, 0.596);
+    border-radius: 1em;
+    margin-top: 2em;
+    font-size: .7em;
+    width: 98%;
+    background-color: rgba(230, 230, 230, 0.582);
+    padding: 1em 1em;
+    margin: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+}
+
+.error-explanation{
+    color: rgb(255, 68, 68);
+}
+
+.alert{
+    text-align: center;
+    background-color: rgb(89, 255, 191);
+    color: rgb(77, 77, 77);
+    width: 90%;
+    margin: 1em auto;
+    padding: .5em 0;
+    border-radius: .5em;
+    
+}
