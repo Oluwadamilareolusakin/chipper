@@ -1,23 +1,35 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Users</h1>
+<h1 class = "admin-users-table-title center-aligned-text">Users</h1>
 
-<div class="users-table">
-  <div class="user row">
-    <% @users.each do |user| %>
-        <p><%= user.name %></p>
-        <p><%= user.username %></p>
-        <p><%= user.email %></p>
-        <p><%= user.age %></p>
-        <p><%= user.nationality %></p>
-        <p><%= user.gender %></p>
-        <p><%= link_to 'Show', user %></p>
-        <p><%= link_to 'Edit', edit_user_path(user) %></p>
-        <p><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-    <% end %>
-  </div>
-</div>
+<table class="users-table row">
+  <tr>
+    <td class="users-table-header">Full name</td>
+    <td class="users-table-header">Username</td>
+    <td class="users-table-header">Email</td>
+    <td class="users-table-header">Age</td>
+    <td class="users-table-header">Nationality</td>
+    <td class="users-table-header">Gender</td>
+    <td class="users-table-header">View Profile</td>
+    <td class="users-table-header">Edit User</td>
+    <td class="users-table-header">Delete User</td>
+  </tr>
+  <% @users.each do |user| %>
+    <tr class="user">
+        <td class="user-admin-dashboard-details"><%= user.name %></td>
+        <td class="user-admin-dashboard-details"><%= user.username %></td>
+        <td class="user-admin-dashboard-details"><%= user.email %></td>
+        <td class="user-admin-dashboard-details"><%= user.age %></td>
+        <td class="user-admin-dashboard-details"><%= user.nationality %></td>
+        <td class="user-admin-dashboard-details"><%= user.gender %></td>
+        <td class="user-admin-dashboard-controls admin-user-show"><%= link_to 'Show', user %></td>
+        <td class="user-admin-dashboard-controls admin-user-edit"><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td class="user-admin-dashboard-controls admin-user-delete"><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }%></td>
+    </tr>
+  <% end %>
+</table>
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<div class="new-admin-user-button-container row container">
+  <%= link_to 'New User', signup_path, class: 'new-admin-user-button' %>
+</div>

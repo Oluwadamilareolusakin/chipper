@@ -1,14 +1,45 @@
-<p id="notice"><%= notice %></p>
+<div class="user-profile-header">
+  <%= link_to 'Edit your profile', edit_user_path(@user), class: 'edit-user-button' %> 
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+  <div class="user-profile-info row">
+    <div class="user-profile-image">
+      <%= gravatar_for @user %>
+    </div>
+    <div class="user-name-follow-button-and-username column">
+      <div class="name-username-container">
+          <p>
+            <strong>
+              <%= @user.username %>
+            </strong>
+          </p>
+          <p>
+            <%= @user.name %>
+          </p>
+      </div>
+      <div class="profile-count-container row">
+        <div class="count">
+          <div class="count-title">
+            <p>Followers</p>
+          </div>
+          <div class="count-data">
+            <p>0</p>
+          </div>
+        </div>
+        <div class="count">
+          <div class="count-title">
+            <p>Followers</p>
+          </div>
+          <div class="count-data">
+            <p>0</p>
+          </div>
+        </div>
+      </div>
+      <div class="profile-follow-container row">
+        <%= link_to  "Follow", edit_user_path(@user), class:'profile-follow-button'%>
+      </div>
+    </div>
+  </div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+  </div>
+</div>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
