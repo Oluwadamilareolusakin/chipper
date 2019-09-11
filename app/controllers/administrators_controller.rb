@@ -27,22 +27,21 @@ class AdministratorsController < ApplicationController
   # POST /administrators.json
   def create
     @administrator = Administrator.new(administrator_params)
-    @administrator.save
-    redirect_to @administrator if @administrator.save
-    render :new unless @administrator.save
+    if @administrator.save
+      flash[:success] = "Welcome to Chipper #{@administrator.name}"
+      redirect_to @administrator 
+    else
+      render :new
+    end
   end
   
   # PATCH/PUT /administrators/1
   # PATCH/PUT /administrators/1.json
   def update
-    respond_to do |format|
-      if @administrator.update(administrator_params)
-        format.html { redirect_to @administrator, notice: 'Administrator was successfully updated.' }
-        format.json { render :show, status: :ok, location: @administrator }
-      else
-        format.html { render :edit }
-        format.json { render json: @administrator.errors, status: :unprocessable_entity }
-      end
+    if @administrator.update(administrator_params)
+      redirect_to @administrator 
+    else
+      render :edit
     end
   end
 
