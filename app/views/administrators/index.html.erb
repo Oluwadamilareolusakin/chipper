@@ -1,7 +1,4 @@
-<p id="notice"><%= notice %></p>
-
 <h1 class = "admin-users-table-title center-aligned-text">Administrators</h1>
-
 
 <table class="users-table row">
   <tr>
@@ -25,5 +22,6 @@
 </table>
 <br>
 <div class="new-admin-user-button-container row container">
+  <%= link_to  "Manage Users", users_path %>
   <%= link_to 'New Administrator', new_administrator_path, class: 'new-admin-user-button' %>
 </div>

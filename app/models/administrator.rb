@@ -1,6 +1,6 @@
 class Administrator < ApplicationRecord
   authenticates_with_sorcery!
-  VALID_PASSWORD_FORMAT = /\A((?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*]))+/i
+  VALID_PASSWORD_FORMAT = /\A((?=.+[a-z])(?=.+[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*]))+/i
   VALID_EMAIL_FORMAT = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
 
   validates :username, presence: true, length: { maximum: 15 }, uniqueness: true

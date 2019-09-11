@@ -1,25 +1,32 @@
 <div class="user-admin-data-form row">
   <%= form_with(model: user, local: true) do |form|%>
     <% if user.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+    <div class="error-explanation">
+
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
   
         <ul>
         <% user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+        <li><%= message %></li>
         <% end %>
         </ul>
       </div>
     <% end %>
-  
+    
+    <div class="field">
+      <%= form.text_field :email, placeholder: 'Email Address' %>
+    </div>
+    
+      <div class="field">
+          <%= form.text_field :name, placeholder: "Full Name" %>
+      </div>
+
     <div class="field">
       <%= form.text_field :username, placeholder: "Username" %>
+      <h5>Username can contain any letter and an underscore</h6>
     </div>
-  
-    <div class="field">
-        <%= form.text_field :name, placeholder: "Full Name" %>
-    </div>
-  
+    
+    <% if controller.action_name == 'edit'%>
     <div class="field">
         <%= form.number_field :age, placeholder: "Age" %>
     </div>
@@ -33,10 +40,8 @@
         <%= form.text_field :gender, placeholder: "Gender" %>
     </div>
     
-    <div class="field">
-      <%= form.text_field :email, placeholder: 'Email Address' %>
-    </div>
   
+    <% end %>
     <div class="actions">
       <%= form.submit %>
     </div>
