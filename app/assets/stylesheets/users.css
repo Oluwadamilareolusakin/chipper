@@ -3,7 +3,9 @@
   padding: .3em 1.2em;
   border-radius: .2em;
   color: white;
-  border: none; }
+  border: none;
+  font-size: .8em;
+  font-family: 'Muli', sans-serif; }
 
 .user-profile-header, .user-profile-header .user-profile-info .gravatar {
   background-size: cover;
@@ -42,8 +44,15 @@
   padding: 2em 0; }
   .users-table .user-table-header {
     padding: 1em 1em; }
+  .users-table th, .users-table td {
+    font-family: 'Muli';
+    text-align: center; }
+  .users-table th {
+    font-size: .8em;
+    margin: 0 1em; }
   .users-table td {
-    padding: 1em .5em; }
+    font-size: .7em;
+    padding: .7em 2.1em; }
   .users-table .user .user-admin-dashboard-details, .users-table .user .user-admin-dashboard-controls, .users-table .user .users-table-header {
     background-color: rgba(236, 236, 236, 0.61); }
   .users-table .user .user-admin-dashboard-controls {
