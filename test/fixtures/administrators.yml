@@ -6,12 +6,12 @@
 #
 one:
 # column: value
-  username: String
   name: String
+  username: String
   email: string@string.com
 
 two:
 # column: value
   name: String2
-  username: String
+  username: String2
   email: string2@string.com
