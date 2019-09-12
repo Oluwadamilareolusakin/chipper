@@ -69,8 +69,19 @@
         padding: 1em 1em;
     }
 
+    th, td{
+        font-family: 'Muli';
+        text-align: center;
+    }
+
+    th{
+        font-size: .8em;
+        margin: 0 1em;
+    }
+
     td{
-        padding: 1em .5em;
+        font-size: .7em;
+        padding: .7em 2.1em;
     }
     
     .user{
