@@ -14,17 +14,23 @@
     <% end %>
     
     <div class="field">
+        <%= form.text_field :name, placeholder: "Full Name" %>
+    </div>
+
+    <div class="field">
       <%= form.text_field :email, placeholder: 'Email Address' %>
     </div>
     
-      <div class="field">
-          <%= form.text_field :name, placeholder: "Full Name" %>
-      </div>
 
     <div class="field">
       <%= form.text_field :username, placeholder: "Username" %>
       <h5>Username can contain any letter and an underscore</h6>
     </div>
+
+    <div class="field">
+        <%= form.text_field :password, placeholder: "Password" %>
+        <h5>Password must contain a lowercase, uppercase and any special character</h6>
+      </div>
     
     <% if controller.action_name == 'edit'%>
     <div class="field">

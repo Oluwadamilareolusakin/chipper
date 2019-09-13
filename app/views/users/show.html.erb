@@ -1,5 +1,7 @@
 <div class="user-profile-header">
-  <%= link_to 'Edit your profile', edit_user_path(@user), class: 'edit-user-button' %> 
+  <%  if is_logged_in? %>
+    <%= link_to 'Edit your profile', edit_user_path(@user), class: 'edit-user-button' %> 
+  <% end %>
 
   <div class="user-profile-info row">
     <div class="user-profile-image">

@@ -3,6 +3,7 @@ require 'test_helper'
 class UsersControllerTest < ActionDispatch::IntegrationTest
   setup do
     @user = users( :one )
+    @user.password = 'Dammiiee12'
   end
 
   test 'should get index' do
@@ -27,7 +28,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
                                           email: 'String@string.com',  
                                           gender: 'Male',
                                           nationality: 'Nigerian',
-                                          age: '42' }}
+                                          age: '42', password: 'Dammiiee12!' }}
     end
 
     assert_redirected_to user_path(User.last)
@@ -40,11 +41,11 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
   test 'should update user' do
     put user_path(@user), params: { user: { username: @user.username, 
-                                              name: @user.name, 
+                                              name: 'Bobo', 
                                               email: @user.email,
                                               gender: @user.gender,
                                               nationality: @user.nationality,
-                                              age: @user.age} }
+                                              age: @user.age, password: @user.password} }
     assert_redirected_to @user
   end
 
