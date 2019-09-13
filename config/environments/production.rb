@@ -94,6 +94,7 @@ Rails.application.configure do
 # end
 
 # config/environments/production.rb
+config.assets.initialize_on_precompile = false
 config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
 if ENV["RAILS_LOG_TO_STDOUT"].present?

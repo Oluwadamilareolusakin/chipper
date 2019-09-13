@@ -13,14 +13,8 @@ gem 'rails', '~> 5.2.3'
 #Use sorcery for authentication
 gem 'sorcery'
 
-# Use sqlite3 as the database for Active Record
-group :development, :test do
-  gem 'sqlite3', '< 1.4'
-end
-
-group :production do
-  gem 'pg', '1.1.4'
-end
+# Use postgresql as the database for Active Record
+  gem 'pg'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.11'

@@ -89,8 +89,6 @@ pre.debug_dump{
 
 .alert{
     text-align: center;
-    background-color: rgba(16, 255, 163, 0.856);
-    color: rgb(77, 77, 77);
     width: 40%;
     margin: 1em auto;
     padding: .2em 0;
@@ -100,4 +98,14 @@ pre.debug_dump{
     font-family: 'Nanum', sans-serif;
     font-size: .8em;
     z-index: 1;
+}
+
+.alert-success{
+    background-color: rgba(16, 255, 163, 0.856);
+    color: rgb(77, 77, 77);
+}
+
+.alert-danger{
+    color: rgb(70, 0, 0);
+    background-color: rgba(255, 52, 16, 0.856);
 }
