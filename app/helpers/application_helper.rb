@@ -1,6 +1,6 @@
 module ApplicationHelper
     def page_title(title = '')
-        @base_title = 'Chipper'
+        @base_title = 'Chipper | Social network for the dauntless'
         if title == ''
             @base_title
         else

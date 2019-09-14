@@ -1,8 +1,6 @@
 @import 'component_styles';
 
-a:hover{
-    text-decoration: none;
-}
+
 
 .navigation{
     background-color: rgb(255, 255, 255);
@@ -18,12 +16,14 @@ a:hover{
         border: 3px solid $main-pink;
         margin: 0 1em;
         padding: .5em 2em;
+        border-radius: $round-button-radius;
     }
 
     .nav-signup-btn{
         background-color: $main-green;
         color: white;
         padding: .6em 2em;
+        border-radius: $round-button-radius;
     }
 
 }
