@@ -15,6 +15,7 @@ class UsersController < ApplicationController
     
     def create
         @user = User.new(user_params)
+        names(@user.names)
         if @user.save
             flash[:success] = "Welcome to Chipper #{@user.name}" 
             redirect_to user_path(@user) 
