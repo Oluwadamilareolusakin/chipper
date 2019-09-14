@@ -2,8 +2,7 @@ require 'test_helper'
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @user = users( :one )
-    @user.password = 'Dammiiee12'
+    @user = users( :jim )
   end
 
   test 'should get index' do
@@ -45,7 +44,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
                                               email: @user.email,
                                               gender: @user.gender,
                                               nationality: @user.nationality,
-                                              age: @user.age, password: @user.password} }
+                                              age: @user.age} }
     assert_redirected_to @user
   end
 

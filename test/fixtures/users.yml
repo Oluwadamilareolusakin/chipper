@@ -11,7 +11,7 @@ jim:
   email: string@string.com  
   gender: String
   nationality: String
-  password: <%User.digest('TheBoyisBad12!')%>
+  password_digest: <%=User.digest('TheBoyisBad12!')%>
   age: Integer
 
 two:

@@ -2,8 +2,7 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   setup do
-    @user = users(:one)
-    @user.password = 'Dammiiee12'
+    @user = users(:jim)
   end
 
   test "user must be valid" do
