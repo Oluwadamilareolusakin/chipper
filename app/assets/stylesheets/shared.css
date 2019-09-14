@@ -9,14 +9,26 @@
 .user-admin-data-form .actions input, .new-admin-user-button-container .new-admin-user-button {
   background-color: #4fa398; }
 
+a:hover {
+  text-decoration: none; }
+
 .navigation {
   background-color: white;
   box-shadow: 0px .1px 5px .1px black;
-  padding: .5em 2em;
+  padding: .8em 3em;
   position: absolute;
   top: 0;
   width: 100%;
-  justify-content: space-between; }
+  justify-content: space-between;
+  font-family: 'Lato'; }
+  .navigation .nav-login-btn {
+    border: 3px solid #ff6680;
+    margin: 0 1em;
+    padding: .5em 2em; }
+  .navigation .nav-signup-btn {
+    background-color: #4fa398;
+    color: white;
+    padding: .6em 2em; }
 
 .center-aligned-text {
   text-align: center;
