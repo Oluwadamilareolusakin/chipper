@@ -101,4 +101,7 @@ pre.debug_dump {
   color: #460000;
   background-color: rgba(255, 52, 16, 0.856); }
 
+a:hover {
+  text-decoration: none; }
+
 /*# sourceMappingURL=shared.css.map */
