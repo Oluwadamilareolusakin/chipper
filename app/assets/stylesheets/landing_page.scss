@@ -2,14 +2,13 @@
 @import 'component_styles';
 
 .landing-page-container{
-    background-color: rgb(79, 163, 152);
     height: 100vh;
     justify-content: center;
     align-items: flex-start;
     padding: 0 2em;
     .landing-page-header{
         font-size: 6em;
-        color: white;
+        color: rgb(34, 34, 34);
         line-height: 1em;
         font-family: 'Manjari', sans-serif;
     }
@@ -18,7 +17,7 @@
         margin: .3em 0 .4em 0;
         font-size: 2em;
         font-family: 'Manjari', sans-serif;
-        color: white;
+        color: $main-green;
     }
     
     .hero-cta{
