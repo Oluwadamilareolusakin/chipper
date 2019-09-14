@@ -1,4 +1,4 @@
-.user-admin-data-form .actions input, .new-admin-user-button-container .new-admin-user-button {
+.user-admin-data-form .actions input, .new-admin-user-button-container .new-admin-user-button, .hero-cta {
   padding: .3em 1.2em;
   border-radius: .2em;
   color: white;
@@ -13,6 +13,8 @@
   background-color: white;
   box-shadow: 0px .1px 5px .1px black;
   padding: .3em 2em;
+  position: absolute;
+  top: 0;
   width: 100%;
   justify-content: space-between; }
 
@@ -98,5 +100,32 @@ pre.debug_dump {
 .alert-danger {
   color: #460000;
   background-color: rgba(255, 52, 16, 0.856); }
+
+.landing-page-container {
+  background-color: #008cff;
+  height: 100vh;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 2em; }
+
+.landing-page-header {
+  font-size: 6em;
+  color: white;
+  line-height: 1em;
+  font-family: 'Nanum', sans-serif; }
+
+.landing-page-subtext {
+  margin: .8em 0 .4em 0;
+  font-size: 2em;
+  font-family: 'Manjari', sans-serif;
+  color: white; }
+
+.hero-cta {
+  background-color: #ff6680;
+  padding: .5em 2em;
+  font-size: 1em; }
+
+a {
+  text-decoration: none; }
 
 /*# sourceMappingURL=shared.css.map */

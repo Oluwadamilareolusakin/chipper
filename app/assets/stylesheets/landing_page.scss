@@ -1,0 +1,35 @@
+
+.landing-page-container{
+    background-color: rgb(0, 140, 255);
+    height: 100vh;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 2em;
+}
+
+.landing-page-header{
+    font-size: 6em;
+    color: white;
+    line-height: 1em;
+    font-family: 'Nanum', sans-serif;
+}
+
+.landing-page-subtext{
+    margin: .8em 0 .4em 0;
+    font-size: 2em;
+    font-family: 'Manjari', sans-serif;
+    color: white;
+}
+
+.hero-cta{
+    background-color: rgb(255, 102, 128);
+    @extend %button-bg;
+    padding: .5em 2em;
+    font-size: 1em;
+}
+
+
+a{
+    text-decoration: none;
+}
+// Lato|Manjari|Muli
