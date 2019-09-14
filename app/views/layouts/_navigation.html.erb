@@ -1,3 +1,6 @@
+<% unless @current_user.nil? %>
+    <%= link_to  "Logout", logout_path, method: :delete%> 
+<% end %>
 <% unless controller.action_name == 'new' || logged_in? %>
     <%= link_to  "Login", login_path %>
     <%= link_to  "Sign up", signup_path %>
