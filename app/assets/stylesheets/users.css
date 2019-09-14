@@ -1,11 +1,13 @@
 .user-profile-header .edit-user-button, .user-profile-header .user-profile-info .user-name-follow-button-and-username .profile-follow-container .profile-follow-button {
-  background-color: teal;
   padding: .3em 1.2em;
   border-radius: .2em;
   color: white;
   border: none;
   font-size: .8em;
   font-family: 'Muli', sans-serif; }
+
+.user-profile-header .edit-user-button, .user-profile-header .user-profile-info .user-name-follow-button-and-username .profile-follow-container .profile-follow-button {
+  background-color: teal; }
 
 .user-profile-header, .user-profile-header .user-profile-info .gravatar {
   background-size: cover;
@@ -18,9 +20,6 @@
   background-image: url("1.jpg");
   padding: 1em 4em;
   position: relative; }
-  .user-profile-header .edit-user-button {
-    position: absolute;
-    right: 5%; }
   .user-profile-header .user-profile-info {
     position: absolute;
     bottom: 0;
