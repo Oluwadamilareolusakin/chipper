@@ -1,9 +1,10 @@
 $main-green: rgb(79, 163, 152);
 $main-pink: rgb(255, 102, 128);
+$round-button-radius: .2em;
 
 %button-bg{
     padding: .3em 1.2em;
-    border-radius: .2em;
+    border-radius: $round-button-radius;
     color: white;
     border: none;
     font-size: .8em;
