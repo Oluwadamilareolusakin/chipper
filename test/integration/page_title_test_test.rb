@@ -3,7 +3,7 @@ require 'test_helper'
 class PageTitleTestTest < ActionDispatch::IntegrationTest
 
   setup do
-    @base_title = 'Chipper'
+    @base_title = 'Chipper | Social network for the dauntless'
   end
 
   test 'root title should be Chipper' do
