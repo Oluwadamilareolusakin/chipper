@@ -16,7 +16,9 @@
       <% end %>
     </div>
     <nav>
-      
+      <% unless controller.action_name == 'new' || logged_in? %>
+        <%= render 'users/navigation' %>
+      <% end %>
     </nav>
     <%= yield %>
       <% debug(params) if Rails.env.development? %>
