@@ -1,3 +1,5 @@
+$main-green: rgb(79, 163, 152);
+
 %button-bg{
     padding: .3em 1.2em;
     border-radius: .2em;
@@ -9,7 +11,7 @@
 
 %teal-button{
     @extend %button-bg;
-    background-color: teal;
+    background-color: $main-green;
 }
 
 

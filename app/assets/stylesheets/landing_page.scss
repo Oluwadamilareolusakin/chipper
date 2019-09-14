@@ -1,6 +1,8 @@
 
+@import 'component_styles';
+
 .landing-page-container{
-    background-color: rgb(0, 140, 255);
+    background-color: rgb(79, 163, 152);
     height: 100vh;
     justify-content: center;
     align-items: flex-start;
@@ -11,11 +13,11 @@
     font-size: 6em;
     color: white;
     line-height: 1em;
-    font-family: 'Nanum', sans-serif;
+    font-family: 'Manjari', sans-serif;
 }
 
 .landing-page-subtext{
-    margin: .8em 0 .4em 0;
+    margin: .3em 0 .4em 0;
     font-size: 2em;
     font-family: 'Manjari', sans-serif;
     color: white;
