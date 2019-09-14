@@ -1,4 +1,4 @@
-.hero-cta {
+.landing-page-container .hero-cta {
   padding: .3em 1.2em;
   border-radius: .2em;
   color: white;
@@ -12,25 +12,23 @@
   justify-content: center;
   align-items: flex-start;
   padding: 0 2em; }
-
-.landing-page-header {
-  font-size: 6em;
-  color: white;
-  line-height: 1em;
-  font-family: 'Manjari', sans-serif; }
-
-.landing-page-subtext {
-  margin: .3em 0 .4em 0;
-  font-size: 2em;
-  font-family: 'Manjari', sans-serif;
-  color: white; }
-
-.hero-cta {
-  background-color: #ff6680;
-  padding: .5em 2em;
-  font-size: 1em; }
-
-a {
-  text-decoration: none; }
+  .landing-page-container .landing-page-header {
+    font-size: 6em;
+    color: white;
+    line-height: 1em;
+    font-family: 'Manjari', sans-serif; }
+  .landing-page-container .landing-page-subtext {
+    margin: .3em 0 .4em 0;
+    font-size: 2em;
+    font-family: 'Manjari', sans-serif;
+    color: white; }
+  .landing-page-container .hero-cta {
+    background-color: #ff6680;
+    padding: .5em 2em;
+    font-size: 1em;
+    transition: .5s; }
+    .landing-page-container .hero-cta:hover {
+      background-color: #388a8a;
+      text-decoration: none; }
 
 /*# sourceMappingURL=landing_page.css.map */
