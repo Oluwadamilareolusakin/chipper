@@ -1,0 +1,4 @@
+<% unless controller.action_name == 'new' || logged_in? %>
+    <%= link_to  "Login", login_path %>
+    <%= link_to  "Sign up", signup_path %>
+<% end %>
