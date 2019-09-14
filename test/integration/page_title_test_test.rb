@@ -1,7 +1,18 @@
 require 'test_helper'
 
 class PageTitleTestTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+
+  setup do
+    @base_title = 'Chipper'
+  end
+
+  test 'root title should be Chipper' do
+    get root_path
+    assert_select 'title', @base_title
+  end
+
+  test 'login page title' do
+    get login_path
+    assert_select 'title', "Log in | #{@base_title}"
+  end
 end

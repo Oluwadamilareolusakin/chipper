@@ -6,8 +6,8 @@
 #
 jim:
 # column: value
-  username: String
   name: String
+  username: String
   email: string@string.com  
   gender: String
   nationality: String
