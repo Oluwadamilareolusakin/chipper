@@ -10,24 +10,14 @@
   background-color: #4fa398; }
 
 .navigation {
-  background-color: white;
-  box-shadow: 0px .1px 5px .1px black;
-  padding: .8em 3em;
+  z-index: 1;
   position: absolute;
   top: 0;
+  background-color: white;
+  box-shadow: 0px .1px 5px .1px black;
+  padding: .3em 0;
   width: 100%;
-  justify-content: space-between;
-  font-family: 'Lato'; }
-  .navigation .nav-login-btn {
-    border: 3px solid #ff6680;
-    margin: 0 1em;
-    padding: .5em 2em;
-    border-radius: 0.2em; }
-  .navigation .nav-signup-btn {
-    background-color: #4fa398;
-    color: white;
-    padding: .6em 2em;
-    border-radius: 0.2em; }
+  justify-content: space-between; }
 
 .center-aligned-text {
   text-align: center;
@@ -48,7 +38,7 @@
     box-sizing: border-box;
     width: 40%; }
   .user-admin-data-form input {
-    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.274);
+    box-shadow: 0 0 0.2em 0.1em rgba(0, 0, 0, 0.274);
     padding: 0 .5em;
     height: 2.3em; }
   .user-admin-data-form .field, .user-admin-data-form input {
@@ -111,8 +101,5 @@ pre.debug_dump {
 .alert-danger {
   color: #460000;
   background-color: rgba(255, 52, 16, 0.856); }
-
-a:hover {
-  text-decoration: none; }
 
 /*# sourceMappingURL=shared.css.map */
