@@ -7,21 +7,20 @@
   font-family: 'Muli', sans-serif; }
 
 .landing-page-container {
-  background-color: #4fa398;
   height: 100vh;
   justify-content: center;
   align-items: flex-start;
   padding: 0 2em; }
   .landing-page-container .landing-page-header {
     font-size: 6em;
-    color: white;
+    color: #222222;
     line-height: 1em;
     font-family: 'Manjari', sans-serif; }
   .landing-page-container .landing-page-subtext {
     margin: .3em 0 .4em 0;
     font-size: 2em;
     font-family: 'Manjari', sans-serif;
-    color: white; }
+    color: #4fa398; }
   .landing-page-container .hero-cta {
     background-color: #ff6680;
     padding: .5em 2em;

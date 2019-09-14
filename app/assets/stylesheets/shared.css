@@ -12,7 +12,7 @@
 .navigation {
   background-color: white;
   box-shadow: 0px .1px 5px .1px black;
-  padding: .8em 3em;
+  padding: .1em 3em;
   position: absolute;
   top: 0;
   width: 100%;
@@ -21,12 +21,14 @@
   .navigation .nav-login-btn {
     border: 3px solid #ff6680;
     margin: 0 1em;
-    padding: .5em 2em;
+    padding: .2em 1em;
+    font-size: 0.8em;
     border-radius: 0.2em; }
   .navigation .nav-signup-btn {
+    font-size: 0.8em;
     background-color: #4fa398;
     color: white;
-    padding: .6em 2em;
+    padding: .3em 1em;
     border-radius: 0.2em; }
 
 .center-aligned-text {

@@ -1,11 +1,11 @@
 @import 'component_styles';
 
-
+$btn-font-size: .8em;
 
 .navigation{
     background-color: rgb(255, 255, 255);
     box-shadow: 0px .1px 5px .1px black;
-    padding: .8em 3em;
+    padding: .1em 3em;
     position: absolute;
     top: 0;
     width: 100%;
@@ -15,14 +15,16 @@
     .nav-login-btn{
         border: 3px solid $main-pink;
         margin: 0 1em;
-        padding: .5em 2em;
+        padding: .2em 1em;
+        font-size: $btn-font-size;
         border-radius: $round-button-radius;
     }
 
     .nav-signup-btn{
+        font-size: $btn-font-size;
         background-color: $main-green;
         color: white;
-        padding: .6em 2em;
+        padding: .3em 1em;
         border-radius: $round-button-radius;
     }
 
