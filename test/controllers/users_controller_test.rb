@@ -44,7 +44,8 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
                                               email: @user.email,
                                               gender: @user.gender,
                                               nationality: @user.nationality,
-                                              age: @user.age} }
+                                              age: @user.age,
+                                              password: 'Dammiiee12!'} }
     assert_redirected_to @user
   end
 
