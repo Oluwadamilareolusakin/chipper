@@ -9,6 +9,8 @@ gem 'minitest-reporters'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 
+# Adds functionality like assert_template
+gem 'rails-controller-testing'
 
 #Use sorcery for authentication
 gem 'sorcery'
