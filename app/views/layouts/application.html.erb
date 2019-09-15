@@ -19,7 +19,7 @@
       <nav class="navigation row">
           <%= render 'layouts/navigation' %>
       </nav>
-    <% elsif controller.action_name != 'new' && controller.controller_name != 'application' %>
+    <% elsif controller.controller_name != 'application' %>
       <nav class="navigation-with--bg row">
         <%= render 'layouts/navigation' %>
       </nav>    
