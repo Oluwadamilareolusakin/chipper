@@ -6,7 +6,7 @@
 
     </div>
     <div class="nav-user-actions">
-        <% unless @current_user.nil? %>
+        <% unless current_user.nil? %>
             <%= link_to  "Logout", logout_path, method: :delete%> 
         <% end %>
         <% unless logged_in? %>
