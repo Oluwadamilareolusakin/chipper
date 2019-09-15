@@ -1,6 +1,8 @@
 @import 'component_styles';
 
 $btn-font-size: .8em;
+$border-btn-padding: .3em 1em;
+$btn-padding: .4em 1em;
 
 %navigation{
     padding: .9em 4em 0 4em;
@@ -19,7 +21,7 @@ $btn-font-size: .8em;
         margin-right: 1em;
         border-radius: $round-button-radius;
         background-color: $main-pink;
-        padding: .3em 1em;
+        padding: $btn-padding;
         color: white;
         font-size: $btn-font-size;                                                                                                                                                                                                                                                                                                               
     }
@@ -27,7 +29,7 @@ $btn-font-size: .8em;
     .nav-login-btn{
         border: 3px solid $main-pink;
         margin: 0 1em;
-        padding: .2em 1em;
+        padding: $border-btn-padding;
         font-size: $btn-font-size;
         border-radius: $round-button-radius;
     }
@@ -36,8 +38,15 @@ $btn-font-size: .8em;
         font-size: $btn-font-size;
         background-color: $main-green;
         color: white;
-        padding: .3em 1em;
+        padding: $btn-padding;
         border-radius: $round-button-radius;
+    }
+
+    .logout-btn{
+        font-size: $btn-font-size;
+        border-radius: $round-button-radius;
+        padding: $border-btn-padding;
+        border: 3px solid rgb(43, 43, 43);
     }
 }
 
