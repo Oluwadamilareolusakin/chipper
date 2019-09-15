@@ -3,7 +3,7 @@
 $btn-font-size: .8em;
 
 %navigation{
-    padding: .7em 4em 0 4em;
+    padding: .9em 4em 0 4em;
     z-index: 1;
     position: absolute;
     top: 0;
@@ -12,7 +12,7 @@ $btn-font-size: .8em;
     font-family: 'Lato';
 
     .logo{
-        width: 160px;
+        width: 120px;
     }
 
     .profile-btn{
@@ -21,6 +21,7 @@ $btn-font-size: .8em;
         background-color: $main-pink;
         padding: .3em 1em;
         color: white;
+        font-size: $btn-font-size;                                                                                                                                                                                                                                                                                                               
     }
 
     .nav-login-btn{
