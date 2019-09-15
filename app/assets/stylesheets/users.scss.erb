@@ -1,0 +1,109 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'component_styles';
+
+
+// User show page
+
+.user-profile-header{
+    @extend %background-image;
+    width: 100%;
+    height: 300px;
+    background-image: asset_path('1.jpg');
+    padding: 1em 4em;
+    position: relative;
+    
+    .edit-user-button{
+        @extend %teal-button;
+    }
+    
+    .user-profile-info{
+        position: absolute;
+        bottom: 0;
+        padding: 1em 1em;
+        align-items: flex-start;
+        box-sizing: border-box;
+        
+        .gravatar{
+            @extend %background-image;
+            border-radius: 50%;
+            border: 1px solid white;
+            width: 200px;
+            height: 200px;
+        }
+
+        .user-name-follow-button-and-username{
+            justify-content: flex-start;
+            padding: 0 1em;
+
+            .profile-count-container{
+    
+                .count{
+                    color: rgb(1, 61, 61);
+                    margin-right: 1em;
+                }
+            }
+            
+            .profile-follow-container{
+                .profile-follow-button{ 
+                    @extend %teal-button;
+                }
+            }
+        }
+        
+    }
+
+}
+
+// User index page
+
+
+.users-table{
+    justify-content: center;
+    padding: 2em 0;
+    
+    .user-table-header{
+        padding: 1em 1em;
+    }
+
+    th, td{
+        font-family: 'Muli';
+        text-align: center;
+    }
+
+    th{
+        font-size: .8em;
+        margin: 0 1em;
+    }
+
+    td{
+        font-size: .7em;
+        padding: .7em 2.1em;
+    }
+    
+    .user{
+        
+        .user-admin-dashboard-details, .user-admin-dashboard-controls, .users-table-header{
+            background-color: rgba(236, 236, 236, 0.61);
+        }
+
+        .user-admin-dashboard-controls{
+            border-radius: .3em;
+        }
+
+        .admin-user-show{
+            color: rgb(21, 179, 100);
+        }
+
+        .admin-user-edit{
+            color: rgb(255, 185, 56);
+        }
+
+        .admin-user-delete{
+            color: rgb(255, 46, 46);
+        }
+    }
+
+}
+
