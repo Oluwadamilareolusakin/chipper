@@ -8,6 +8,8 @@ gem 'minitest-reporters'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 
+gem 'rails_12factor', group: :production
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '6.0.0'
 
