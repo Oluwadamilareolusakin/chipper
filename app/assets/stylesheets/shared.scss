@@ -11,6 +11,10 @@ $btn-font-size: .8em;
     justify-content: space-between;
     font-family: 'Lato';
 
+    .logo{
+        width: 160px;
+    }
+
     .nav-login-btn{
         border: 3px solid $main-pink;
         margin: 0 1em;

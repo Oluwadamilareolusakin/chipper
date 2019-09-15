@@ -1,10 +1,13 @@
 <% unless controller.action_name == 'new' %>
-    <div class="nav-site-links">
-        <%= link_to  "Home", root_path %>
-    </div>
-    <div class="nav-logo">
+<%= image_tag 'Logo', class: 'logo' %>
 
+    <div class="nav-site-links">
+        <% unless controller.action_name == 'landing_page' %>
+            <%= link_to  "Home", root_path %>
+        <% end %>
     </div>
+    
+    
     <div class="nav-user-actions">
         <% unless current_user.nil? %>
             <%= link_to  "Logout", logout_path, method: :delete%> 
