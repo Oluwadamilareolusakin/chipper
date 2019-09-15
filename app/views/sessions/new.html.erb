@@ -1,11 +1,13 @@
 <%provide(:title, 'Log in') %>
-<h1 class=" center-aligned-text ">Login to Chipper</h1>
-<div class="user-admin-data-form row">
-    <%= form_for(:session, url: login_path) do |f| %>
-        <p><%= f.text_field :email, placeholder: "Username or Email Address" %></p>
-        <p><%= f.password_field :password, placeholder: 'Password' %></p>
-        <div class="actions">
-            <p><%= f.submit 'Login'%></p>
-        </div>
-    <% end %>
+<div class="login-form-container column">
+    <h1 class=" center-aligned-text login-header-text">Login to Chipper</h1>
+    <div class="user-admin-data-form row">
+        <%= form_for(:session, url: login_path) do |f| %>
+            <p><%= f.text_field :email, placeholder: "Username or Email Address" %></p>
+            <p><%= f.password_field :password, placeholder: 'Password' %></p>
+            <div class="actions">
+                <p><%= f.submit 'Login'%></p>
+            </div>
+        <% end %>
+    </div>
 </div>
