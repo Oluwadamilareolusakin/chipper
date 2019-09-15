@@ -9,7 +9,7 @@ gem 'minitest-reporters'
 gem 'sass-rails', '~> 5.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.3'
+gem 'rails', '~> 5.1.6'
 
 # Adds functionality like assert_template
 gem 'rails-controller-testing'
