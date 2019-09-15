@@ -1,5 +1,5 @@
 <% unless controller.action_name == 'new' %>
-    <%= link_to asset_path('Logo.png'), root_path, class: 'logo' %>
+    <%= link_to image_tag('Logo.svg'), root_path, class: 'logo' %>
     <div class="nav-user-actions">
         <% unless current_user.nil? %>
             <% unless controller.controller_name == 'users' && controller.action_name == 'show' %>
