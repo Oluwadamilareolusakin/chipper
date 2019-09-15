@@ -19,6 +19,12 @@
   font-family: 'Lato'; }
   .navigation .logo {
     width: 160px; }
+  .navigation .profile-btn {
+    margin-right: 1em;
+    border-radius: 0.2em;
+    background-color: #ff6680;
+    padding: .3em 1em;
+    color: white; }
   .navigation .nav-login-btn {
     border: 3px solid #ff6680;
     margin: 0 1em;

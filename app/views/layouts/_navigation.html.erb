@@ -1,15 +1,11 @@
 <% unless controller.action_name == 'new' %>
-<%= image_tag 'Logo', class: 'logo' %>
+    <%= link_to image_tag( 'Logo'), root_path, class: 'logo' %>
 
-    <div class="nav-site-links">
-        <% unless controller.action_name == 'landing_page' %>
-            <%= link_to  "Home", root_path %>
-        <% end %>
-    </div>
     
     
     <div class="nav-user-actions">
         <% unless current_user.nil? %>
+            <%= link_to  "Profile", current_user, class: 'profile-btn' %>
             <%= link_to  "Logout", logout_path, method: :delete%> 
         <% end %>
         <% unless logged_in? %>
