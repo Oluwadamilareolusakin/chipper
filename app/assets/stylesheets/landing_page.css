@@ -10,7 +10,11 @@
   height: 100vh;
   justify-content: center;
   align-items: flex-start;
-  padding: 2em 0 0 4em; }
+  padding: 2em 0 0 4em;
+  background-image: url("Background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
   .landing-page-container .landing-page-header {
     font-size: 6em;
     color: #222222;
@@ -20,7 +24,7 @@
     margin: .3em 0 .4em 0;
     font-size: 2em;
     font-family: 'Manjari', sans-serif;
-    color: #4fa398; }
+    color: #ff6680; }
   .landing-page-container .hero-cta {
     background-color: #ff6680;
     padding: .5em 2em;
