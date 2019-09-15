@@ -49,8 +49,12 @@
   
     <% end %>
     <div class="actions">
-      <%= form.submit value: 'Sign up' if controller.action_name == 'new' %> 
-      <%= form.submit if controller.action_name != 'new' %>
+      <% unless controller.controller_name == 'users' && 
+                controller.action_name == 'new' || controller.action_name == 'create'%>
+          <%= form.submit%>
+      <%else%>
+        <%= form.submit value: 'Sign up'%> 
+      <% end %>
     </div>
   <% end %>
 </div>
