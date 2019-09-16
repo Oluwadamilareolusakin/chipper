@@ -8,6 +8,8 @@ gem 'minitest-reporters'
 # Use SCSS for stylesheets
 # gem 'sass-rails', '~> 5.0'
 
+gem 'sassc', '1.12.1'
+
 #Yui-compressor for css and js compression
 gem 'yui-compressor', '~> 0.12.0'
 
