@@ -50,9 +50,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should destroy user' do
-    assert_difference('User.count', -1) do
-      delete user_path(@user)
-    end
+    delete user_path(@user)
     assert_redirected_to users_path
   end
 end
