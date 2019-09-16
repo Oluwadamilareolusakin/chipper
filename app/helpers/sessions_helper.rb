@@ -32,8 +32,8 @@ module SessionsHelper
     end
 
     def logout
-        session.delete(:user_id)
         forget(current_user)
+        session.delete(:user_id)
         @current_user = nil
         flash[:success] = 'You logged out successfully'
         redirect_to root_path
