@@ -49,8 +49,7 @@
   
     <% end %>
     <div class="actions">
-      <%= form.submit value: 'Sign up' if (controller.action_name == 'new' || controller.action_name == 'create')%> 
-      <%= form.submit if (controller.action_name != 'new' && controller.action_name != 'create') %>
+      <%= form.submit yield(:button_text)) %>
     </div>
   <% end %>
 </div>

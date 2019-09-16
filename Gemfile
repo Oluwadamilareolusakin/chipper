@@ -6,14 +6,14 @@ ruby '2.6.3'
 # Use SCSS for stylesheets
 # gem 'sass-rails', '~> 5.0'
 
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '6.0.0'
 
 #Yui-compressor for css and js compression
 gem 'yui-rails', '~> 3.13', '>= 3.13.0.0.3.0'
 
 gem 'rails_12factor', group: :production
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '6.0.0'
 
 # Adds functionality like assert_template
 gem 'rails-controller-testing'

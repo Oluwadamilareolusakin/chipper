@@ -1,6 +1,9 @@
-<%= provide(:title, 'Edit Profile') %>
+<% provide(:title, 'Edit Profile') %>
+<% provide(:button_text, 'Save Changes')%>
 <h1 class = "admin-users-table-title center-aligned-text">Edit your profile</h1>
 
+<%= gravatar_for(@user) %>
+<link rel="noopener" href="gravatar.com/emails" target="_blank">
 <%= render 'form', user: @user %>
 
 <%= link_to 'Show', @user %> |
