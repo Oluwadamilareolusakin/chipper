@@ -9,7 +9,7 @@ ruby '2.6.3'
 gem 'rails', '6.0.0'
 
 #Yui-compressor for css and js compression
-gem 'yui-rails', '~> 3.13', '>= 3.13.0.0.3.0'
+gem 'yui-compressor'
 
 gem 'rails_12factor', group: :production
 
