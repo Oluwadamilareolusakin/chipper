@@ -51,4 +51,8 @@ class UserTest < ActiveSupport::TestCase
     user_duplicate.nationality = ' '
     assert_not user_duplicate.valid?
   end
+
+  test 'authenticated? should return false for user with nil remember_digest' do
+    assert_not @user.authenticated?(' ')
+  end
 end

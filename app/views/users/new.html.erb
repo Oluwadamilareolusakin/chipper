@@ -3,4 +3,6 @@
 
 <%= render 'form', user: @user %>
 
-<%= link_to 'Login', login_path %>
+<p class="signup-login-section">
+   Already have an account ? <%= link_to 'Login', login_path, class:'signup-login-btn' %>
+</p>

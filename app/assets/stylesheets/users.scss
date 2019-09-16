@@ -56,6 +56,22 @@
 
 }
 
+.signup-login-section{
+    position: absolute;
+    top: 2em;
+    right: 5em;
+    font-family: 'Manjari';
+}
+
+.signup-login-btn{
+    border-radius: $round-button-radius;
+    background-color: $main-pink;
+    color: white;
+    padding: $btn-padding;
+    font-size: $btn-font-size;
+    font-family: $btn-font;
+}
+
 // User index page
 
 
