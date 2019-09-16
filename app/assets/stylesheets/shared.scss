@@ -1,8 +1,6 @@
 @import 'component_styles';
 
-$btn-font-size: .8em;
-$border-btn-padding: .3em 1em;
-$btn-padding: .4em 1em;
+
 
 %navigation{
     padding: .9em 4em 0 4em;
@@ -84,7 +82,7 @@ main{
 
     form{
         box-sizing: border-box;
-        width: 40%;
+        width: 30%;
     }
 
     input[type = "text"], input[type = "password"], input[type = "number"]{

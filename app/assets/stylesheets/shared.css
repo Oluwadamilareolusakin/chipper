@@ -4,7 +4,7 @@
   color: white;
   border: none;
   font-size: .8em;
-  font-family: 'Muli', sans-serif; }
+  font-family: "Muli", sans-serif; }
 
 .user-admin-data-form .actions input, .new-admin-user-button-container .new-admin-user-button {
   background-color: #4fa398; }
@@ -68,7 +68,7 @@ main {
   font-family: 'Roboto', sans-serif; }
   .user-admin-data-form form {
     box-sizing: border-box;
-    width: 40%; }
+    width: 30%; }
   .user-admin-data-form input[type="text"], .user-admin-data-form input[type="password"], .user-admin-data-form input[type="number"] {
     box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.274);
     padding: 0 .5em;

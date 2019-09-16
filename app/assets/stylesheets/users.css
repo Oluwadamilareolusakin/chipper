@@ -4,7 +4,7 @@
   color: white;
   border: none;
   font-size: .8em;
-  font-family: 'Muli', sans-serif; }
+  font-family: "Muli", sans-serif; }
 
 .user-profile-header .edit-user-button, .user-profile-header .user-profile-info .user-name-follow-button-and-username .profile-follow-container .profile-follow-button {
   background-color: #4fa398; }
@@ -37,6 +37,19 @@
       .user-profile-header .user-profile-info .user-name-follow-button-and-username .profile-count-container .count {
         color: #013d3d;
         margin-right: 1em; }
+
+.signup-login-section {
+  position: absolute;
+  top: 2em;
+  right: 5em; }
+
+.signup-login-btn {
+  border-radius: 0.2em;
+  background-color: #ff6680;
+  color: white;
+  padding: 0.4em 1em;
+  font-size: 0.8em;
+  font-family: "Muli", sans-serif; }
 
 .users-table {
   justify-content: center;
