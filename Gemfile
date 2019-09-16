@@ -6,9 +6,10 @@ ruby '2.6.3'
 gem 'minitest'
 gem 'minitest-reporters'
 # Use SCSS for stylesheets
-# gem 'sass-rails', '~> 5.0'
+gem 'sass-rails', '~> 5.0'
+
 #Yui-compressor for css and js compression
-gem 'yui-compressor', '~> 0.12.0'
+# gem 'yui-compressor', '~> 0.12.0'
 
 gem 'rails_12factor', group: :production
 
