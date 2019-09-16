@@ -3,10 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
-gem 'minitest'
-gem 'minitest-reporters'
 # Use SCSS for stylesheets
-# gem 'sass-rails', '~> 5.0'
+gem 'sass-rails', '~> 5.0'
 
 gem 'sassc', '1.12.1'
 
@@ -23,6 +21,9 @@ gem 'rails-controller-testing'
 
 #Use sorcery for authentication
 gem 'sorcery'
+
+gem 'minitest'
+gem 'minitest-reporters'
 
 # Use postgresql as the database for Active Record
   gem 'pg'
