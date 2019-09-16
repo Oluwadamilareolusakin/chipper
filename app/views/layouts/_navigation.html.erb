@@ -2,6 +2,7 @@
     <%= link_to image_tag('Logo.svg'), root_path, class: 'logo' %>
     <div class="nav-user-actions">
         <% unless current_user.nil? %>
+            <%= link_to  "Chip in", chip_path %>
             <% unless controller.controller_name == 'users' && controller.action_name == 'show' %>
                 <%= link_to  "Profile", current_user, class: 'profile-btn' %>
             <% end %>
