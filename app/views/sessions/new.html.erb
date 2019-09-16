@@ -1,5 +1,6 @@
 <%provide(:title, 'Log in') %>
 <div class="login-form-container column">
+    <p class="signup-login-section">Don't have an account? Don't miss out! <%= link_to  "Sign up", signup_path, class: 'signup-login-btn' %></p>
     <h1 class=" center-aligned-text login-header-text">Login to Chipper</h1>
     <div class="user-admin-data-form row">
         <%= form_for(:session, url: login_path) do |f| %>
