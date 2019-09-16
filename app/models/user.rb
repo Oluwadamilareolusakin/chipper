@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  attr_accessor :remember_token
+
   before_save { self.email = self.email.downcase }
   before_save { self.username = self.username.downcase }
   has_many :posts
@@ -14,11 +16,18 @@ class User < ApplicationRecord
     has_secure_password
     validates :password, format: { with: VALID_PASSWORD_FORMAT }
 
-    def User.digest(string)
+    def self.digest(string)
       cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                     BCrypt::Engine.cost
       BCrypt::Password.create(string, cost: cost)
     end
 
+    def self.generate_token
+      SecureRandom.urlsafe_base64
+    end
 
+    def remember
+      self.remember_token = generate_token
+      self.update(:remember_digest, digest(remember_token))
+    end
 end
