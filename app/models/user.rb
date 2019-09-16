@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   before_save { self.email = self.email.downcase }
   before_save { self.username = self.username.downcase }
+  has_many :posts
   
     VALID_EMAIL_FORMAT = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
     VALID_USERNAME = /\A(?![.])(?![\s]{2})[a-zA-z_.0-9]+(?![.])\z/i
