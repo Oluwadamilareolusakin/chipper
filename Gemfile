@@ -4,7 +4,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.3'
 
 # Use SCSS for stylesheets
-# gem 'sass-rails', '~> 5.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '6.0.0'
@@ -14,6 +13,7 @@ gem 'yui-rails', '~> 3.13', '>= 3.13.0.0.3.0'
 
 gem 'rails_12factor', group: :production
 
+gem 'sass-rails', '~> 5.0'
 
 # Adds functionality like assert_template
 gem 'rails-controller-testing'
