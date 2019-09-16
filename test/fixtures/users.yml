@@ -12,7 +12,7 @@ jim:
   gender: String
   nationality: String
   password_digest: <%=User.digest('TheBoyisBad12!')%>
-  remember_digest: <%= User.digest(:remember_token)%>
+  remember_digest: <%= User.digest(User.generate_token)%>
   age: Integer
 
 two:
