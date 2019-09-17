@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css?family=Lato|Manjari|Muli|Nanum+Gothic|Roboto&display=swap");
+.user-profile-header .edit-user-button, .user-profile-header .user-profile-info .user-name-follow-button-and-username .profile-follow-container .profile-follow-button {
+  padding: .3em 1.2em;
+  border-radius: 0.2em;
+  color: white;
+  border: none;
+  font-size: .8em;
+  font-family: "Muli", sans-serif; }
+
+.user-profile-header .edit-user-button, .user-profile-header .user-profile-info .user-name-follow-button-and-username .profile-follow-container .profile-follow-button {
+  background-color: #4fa398; }
+
+.user-profile-header, .user-profile-header .user-profile-info .gravatar {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; }
+
+.user-profile-header {
+  width: 100%;
+  height: 300px;
+  background-image: asset_url("1.jpg");
+  padding: 1em 4em;
+  position: relative; }
+  .user-profile-header .user-profile-info {
+    position: absolute;
+    bottom: 0;
+    padding: 1em 1em;
+    align-items: flex-start;
+    box-sizing: border-box; }
+    .user-profile-header .user-profile-info .gravatar {
+      border-radius: 50%;
+      border: 1px solid white;
+      width: 200px;
+      height: 200px; }
+    .user-profile-header .user-profile-info .user-name-follow-button-and-username {
+      justify-content: flex-start;
+      padding: 0 1em; }
+      .user-profile-header .user-profile-info .user-name-follow-button-and-username .profile-count-container .count {
+        color: #013d3d;
+        margin-right: 1em; }
+
+.avatar-edit-holder {
+  justify-content: center; }
+  .avatar-edit-holder img {
+    border-radius: 50%;
+    width: 150px;
+    margin: 1em 0 0 0; }
+    .avatar-edit-holder img:hover {
+      background: black; }
+
+.signup-login-section {
+  position: absolute;
+  top: 2em;
+  right: 5em;
+  font-family: 'Manjari'; }
+
+.signup-login-btn {
+  border-radius: 0.2em;
+  background-color: #ff6680;
+  color: white;
+  padding: 0.4em 1em;
+  font-size: 0.8em;
+  font-family: "Muli", sans-serif; }
+
+.users-table {
+  justify-content: center;
+  padding: 2em 0; }
+  .users-table .user-table-header {
+    padding: 1em 1em; }
+  .users-table th, .users-table td {
+    font-family: 'Muli';
+    text-align: center; }
+  .users-table th {
+    font-size: .8em;
+    margin: 0 1em; }
+  .users-table td {
+    font-size: .7em;
+    padding: .7em 2.1em; }
+  .users-table .user .user-admin-dashboard-details, .users-table .user .user-admin-dashboard-controls, .users-table .user .users-table-header {
+    background-color: rgba(236, 236, 236, 0.61); }
+  .users-table .user .user-admin-dashboard-controls {
+    border-radius: .3em; }
+  .users-table .user .admin-user-show {
+    color: #15b364; }
+  .users-table .user .admin-user-edit {
+    color: #ffb938; }
+  .users-table .user .admin-user-delete {
+    color: #ff2e2e; }
+
+/*# sourceMappingURL=users.css.map */
