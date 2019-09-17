@@ -2,7 +2,6 @@ class SessionsController < ApplicationController
 
   def new
     redirect_to current_user if logged_in?
-    @user = User.new
   end
 
   def create
