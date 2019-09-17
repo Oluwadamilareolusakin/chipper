@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
     include UsersHelper
-    before_action :logged_in_user?, only: [:edit, :show]
+    before_action :logged_in_user?, only: [:edit, :show, :index]
     before_action :correct_user?, only: [:edit, :show]
+    before_action :is_admin?, only: [:index]
 
     def index
-        redirect_to root_path unless current_user && current_user.is_admin?
         @users = User.all
     end
 
@@ -36,6 +36,7 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
         @user.update(user_params)
         if @user.save
+            flash[:success] = "Your profile updated successfully!"
             redirect_to @user
         else
             render 'edit'
@@ -46,7 +47,7 @@ class UsersController < ApplicationController
     def destroy
         @user = User.find(params[:id])    
         @user.destroy
-        flash.notice = 'User was destroyed successfully'
+        flash[:success] = 'Your profile was deleted successfully'
         redirect_to users_path
     end
 

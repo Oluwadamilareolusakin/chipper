@@ -25,5 +25,12 @@ module UsersHelper
         @user = User.find(params[:id])
         redirect_to root_path unless current_user?(@user) || current_user.is_admin
     end
+
+    def is_admin?
+        unless current_user.is_admin
+            flash[:danger] = "You don't have permission to access this page"
+            redirect_to root_path
+        end
+    end
     
 end

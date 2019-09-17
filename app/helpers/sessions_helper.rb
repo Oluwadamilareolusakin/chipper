@@ -1,4 +1,16 @@
 module SessionsHelper
+
+
+
+    def find_by_email_or_username(string)
+        if string.include?('@')
+            @user = User.find_by(email: string)
+        else
+            @user = User.find_by(username: string)
+        end
+    end
+
+
     def login(user)
         session[:user_id] = user.id
     end
