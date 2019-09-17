@@ -1,0 +1,9 @@
+<% if @posts.any? %>
+    <% @posts.collect do |post| %>
+            <li class="post column">
+                <%= gravatar_for(post.user) %>
+                <p><%= post.user.username %></p>
+                <p><%= post.body %></p>
+            </li>
+    <% end %>
+<% end %>

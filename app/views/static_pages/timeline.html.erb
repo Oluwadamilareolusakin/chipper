@@ -1,0 +1,14 @@
+<div class="feed-container row">
+    <div class="user-section">
+        <%= gravatar_for(@user) %>
+        <%= form_for @post do |f| %>
+            <p><%= f.text_area :body, placeholder: 'Chip in something interesting...' %></p>
+            <p><%= f.submit value: 'Chip in' %></p>
+        <% end %>
+    </div>
+    <div class="feed">
+        <ol>
+            <%= render 'shared/post'%>
+        </ol>
+    </div>
+</div>
