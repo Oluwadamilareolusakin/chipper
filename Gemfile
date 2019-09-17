@@ -15,6 +15,8 @@ gem 'rails_12factor', group: :production
 
 gem 'sass-rails', '~> 5.0'
 
+gem 'faker'
+
 # Adds functionality like assert_template
 gem 'rails-controller-testing'
 
