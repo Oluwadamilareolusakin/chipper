@@ -1,9 +1,11 @@
 @import 'component_styles';
 
-
+body{
+    overflow: hidden;
+}
 
 %navigation{
-    padding: .9em 4em 0 4em;
+    padding: .4em 4em .4em 4em;
     z-index: 1;
     width: 100%;
     justify-content: space-between;
