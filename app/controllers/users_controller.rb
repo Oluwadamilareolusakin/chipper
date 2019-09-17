@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
     include UsersHelper
+    before_action :logged_in_user?, only: [:edit, :show]
+    before_action :correct_user?, only: [:edit, :show]
 
     def index
         redirect_to root_path unless current_user && current_user.is_admin?
@@ -33,7 +35,11 @@ class UsersController < ApplicationController
     def update
         @user = User.find(params[:id])
         @user.update(user_params)
-        redirect_to @user if @user.save
+        if @user.save
+            redirect_to @user
+        else
+            render 'edit'
+        end
     end
 
 
@@ -43,4 +49,6 @@ class UsersController < ApplicationController
         flash.notice = 'User was destroyed successfully'
         redirect_to users_path
     end
+
+    
 end
