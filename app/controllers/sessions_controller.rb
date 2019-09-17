@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       login(user)
       remember(user)
       flash[:success] = "Welcome, #{user.name}"
-      redirect_to user
+      redirect_back_or_to user
     else
       flash[:danger] = 'Invalid password or email'
       render 'new'
