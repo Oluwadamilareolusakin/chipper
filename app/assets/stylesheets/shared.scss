@@ -1,12 +1,12 @@
 @import 'component_styles';
 
-
+body{
+    overflow: hidden;
+}
 
 %navigation{
-    padding: .9em 4em 0 4em;
+    padding: .4em 4em .4em 4em;
     z-index: 1;
-    position: absolute;
-    top: 0;
     width: 100%;
     justify-content: space-between;
     font-family: 'Lato';
@@ -131,6 +131,8 @@ main{
 pre.debug_dump{
     border: 1px solid rgba(209, 209, 209, 0.596);
     border-radius: 1em;
+    position: absolute;
+    bottom: 0;
     margin-top: 2em;
     font-size: .7em;
     width: 98%;

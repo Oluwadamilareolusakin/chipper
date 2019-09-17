@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     before_action :is_admin?, only: [:index]
 
     def index
-        @users = User.all
+        @users = User.paginate(params[:page])
     end
 
     def show

@@ -1,7 +1,4 @@
 module SessionsHelper
-
-
-
     def find_by_email_or_username(string)
         if string.include?('@')
             @user = User.find_by(email: string)
@@ -58,5 +55,29 @@ module SessionsHelper
         @current_user = nil
         flash[:success] = 'You logged out successfully'
         redirect_to root_path
+    end
+
+    def current_user?(user)
+        user == current_user
+    end
+
+    def logged_in_user?
+        unless logged_in?
+            store_url
+            flash[:danger] = 'Please login'
+            redirect_to login_path
+        end
+    end
+
+    def correct_user?
+        @user = User.find(params[:id])
+        redirect_to root_path unless current_user?(@user) || current_user.is_admin
+    end
+
+    def is_admin?
+        unless current_user.is_admin
+            flash[:danger] = "You don't have permission to access this page"
+            redirect_to root_path
+        end
     end
 end

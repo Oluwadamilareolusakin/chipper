@@ -1,0 +1,15 @@
+<% unless @posts.nil? %>
+    <% @posts.collect do |post| %>
+            <div class="user-detail-card row">
+                <div>
+                    <%= gravatar_for(post.user) %>
+                </div>
+                <div class="card-body column">
+                    <div class="card-username-name row">
+                        <p class="name"><%= post.user.name %></p><p class="username">@<%= post.user.username %></p>
+                    </div>
+                    <p><%= post.body %></p>
+                </div>
+            </div>
+    <% end %>
+<% end %>

@@ -1,0 +1,11 @@
+<tr class="user">
+    <td class="user-admin-dashboard-details"><%= user.name %></td>
+    <td class="user-admin-dashboard-details"><%= user.username %></td>
+    <td class="user-admin-dashboard-details"><%= user.email %></td>
+    <td class="user-admin-dashboard-details"><%= user.age %></td>
+    <td class="user-admin-dashboard-details"><%= user.nationality %></td>
+    <td class="user-admin-dashboard-details"><%= user.gender %></td>
+    <td class="user-admin-dashboard-controls admin-user-show"><%= link_to 'Show', user %></td>
+    <td class="user-admin-dashboard-controls admin-user-edit"><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td class="user-admin-dashboard-controls admin-user-delete"><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }%></td>
+</tr>

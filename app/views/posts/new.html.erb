@@ -1,0 +1,10 @@
+<div class="chip-in-container column">
+    <%= form_for @post do |f| %>
+        <p>
+            <%= f.text_area :body %>
+        </p>
+        <p>
+            <%=  f.submit value: 'Chip in'%>
+        </p>
+    <% end %>
+</div>

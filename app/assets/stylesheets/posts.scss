@@ -1,0 +1,58 @@
+@import 'component_styles';
+
+.chip-in-container{
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+
+    form{
+        box-shadow: 0 0 12px .1px black;
+        border-radius: $round-button-radius;
+        font-family: 'Manjari', sans-serif;
+        padding: 3em 2em;
+        box-sizing: border-box;
+        width: 30%;
+    }
+
+    input[type="submit"]{
+        width: 100%;
+        background-color: $main-pink;
+        color: white;
+        border: none;
+        padding: $btn-padding;
+        border-radius: $round-button-radius;
+    }
+
+    textarea{
+        padding: 1em;
+        height: 200px;
+        width: 100%;
+    }
+
+
+}
+
+.user-detail-card{
+    align-items: flex-start;
+    padding: 1em;
+    border: 1px solid rgba(187, 187, 187, 0.267);
+    img{
+        width: 50px;
+        border-radius: 50%;
+    }
+    .card-body{
+        padding: 0 1em;
+        justify-content: flex-start;
+        .card-username-name{
+            align-items: flex-end;
+            font-family: 'Manjari';
+
+            .username{
+                margin-left: .4em;
+                font-size: .8em;
+                color: $main-green;
+            }
+        }
+    }
+}

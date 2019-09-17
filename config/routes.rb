@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root 'application#landing_page'
+  root 'static_pages#landing_page'
+
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get '/signup', to: 'users#new'
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
   post '/chip', to: 'posts#create'
   delete '/unchip', to: 'posts#destroy'
 
-  get '/timeline', to: 'timelines#show'
+  get '/timeline', to: 'static_pages#timeline'
 
   delete '/logout', to: 'sessions#destroy'
   resources :users
