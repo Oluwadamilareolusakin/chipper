@@ -31,19 +31,20 @@
         <%= form.password_field :password, placeholder: "Password" %>
         <h5>Password must contain a lowercase, uppercase and any special character</h6>
       </div>
+    <% if controller.action_name == 'edit' %>
+      <div class="field">
+          <%= form.number_field :age, placeholder: "Age" %>
+      </div>
+      
     
-    <div class="field">
-        <%= form.number_field :age, placeholder: "Age" %>
-    </div>
+      <div class="field">
+          <%= form.text_field :nationality, placeholder: "Nationality" %>
+      </div>
     
-  
-    <div class="field">
-        <%= form.text_field :nationality, placeholder: "Nationality" %>
-    </div>
-  
-    <div class="field">
-        <%= form.text_field :gender, placeholder: "Gender" %>
-    </div>
+      <div class="field">
+          <%= form.text_field :gender, placeholder: "Gender" %>
+      </div>
+    <% end %>
     
     <div class="actions">
       <%= form.submit yield(:button_text) %>
