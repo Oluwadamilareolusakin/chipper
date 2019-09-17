@@ -3,15 +3,15 @@ class StaticPagesController < ApplicationController
 
   def timeline
     @user = current_user
-    @post = current_user.posts.build if logged_in?
-    @posts = current_user.posts
+    @post = Post.new
+    @posts = current_user.feed
   end
 
 
   def landing_page
     if current_user
         @user = current_user
-        @posts = current_user.posts 
+        @posts = current_user.feed
         render 'timeline'
     else
         render 'landing_page'
