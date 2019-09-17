@@ -15,6 +15,7 @@ module UsersHelper
 
     def logged_in_user?
         unless logged_in?
+            store_url
             flash[:danger] = 'Please login'
             redirect_to login_path
         end

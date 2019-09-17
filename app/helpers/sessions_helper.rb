@@ -3,6 +3,15 @@ module SessionsHelper
         session[:user_id] = user.id
     end
 
+    def redirect_back_or_to(default)
+        redirect_to (session[:fowarding_url] || default)
+        session.delete(:fowarding_url)
+    end
+
+    def store_url
+        session[:fowarding_url] = request.get? request.original_url : nil
+    end
+
     def current_user
         if(user_id = session[:user_id])
             @current_user ||= User.find_by(id: user_id)
