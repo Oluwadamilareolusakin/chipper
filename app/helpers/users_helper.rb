@@ -9,5 +9,20 @@ module UsersHelper
         image_tag( gravatar_url, alt: user.name, class: 'gravatar')
     end
 
+    def current_user?(@user)
+        @user == current_user
+    end
+
+    def logged_in_user?
+        unless logged_in?
+            flash[:danger] = 'Please login'
+            redirect_to login_path
+        end
+    end
+
+    def correct_user?
+        @user = User.find(params:id)
+        redirect_to root_path unless current_user?(@user)
+    end
     
 end
