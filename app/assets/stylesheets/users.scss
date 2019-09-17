@@ -56,6 +56,20 @@
 
 }
 
+.avatar-edit-holder{
+    justify-content: center;
+
+    img{
+        border-radius: 50%;
+        width: 150px;
+        margin: 1em 0 0 0;
+
+        &:hover{
+            background: black;
+        }
+    }
+}
+
 .signup-login-section{
     position: absolute;
     top: 2em;

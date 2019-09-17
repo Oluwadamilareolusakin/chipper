@@ -2,8 +2,13 @@
 <% provide(:button_text, 'Save Changes')%>
 <h1 class = "admin-users-table-title center-aligned-text">Edit your profile</h1>
 
-<%= gravatar_for(@user) %>
-<link rel="noopener" href="gravatar.com/emails" target="_blank">
+<div class="avatar-edit-holder row">
+    <div class="column">
+        <%= gravatar_for(@user) %>
+        <a rel="noopener" target="_blank" href="https://gravatar.com/emails">Change your avatar</a>
+    </div>
+</div>
+
 <%= render 'form', user: @user %>
 
 <%= link_to 'Show', @user %> |
