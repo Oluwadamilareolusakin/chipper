@@ -37,16 +37,22 @@
     align-items: flex-start;
     padding: 1em;
     border: 1px solid rgba(187, 187, 187, 0.267);
+
     img{
-        width: 50px;
+        align-self: flex-start;
+        width: 80px;
         border-radius: 50%;
     }
     .card-body{
         padding: 0 1em;
-        justify-content: flex-start;
+        align-self: flex-start;
+
+        .post-body{
+            font-family: 'Nanum Gothic';
+        }
         .card-username-name{
-            align-items: flex-end;
             font-family: 'Manjari';
+            margin: 0;
 
             .username{
                 margin-left: .4em;
