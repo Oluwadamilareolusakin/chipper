@@ -10,6 +10,7 @@ class StaticPagesController < ApplicationController
 
   def landing_page
     if current_user
+        @user = current_user
         @posts = current_user.posts 
         @post = current_user.posts.build
         render 'timeline'

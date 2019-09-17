@@ -1,9 +1,15 @@
-<% if @posts.any? %>
+<% unless @posts.nil? %>
     <% @posts.collect do |post| %>
-            <li class="post column">
-                <%= gravatar_for(post.user) %>
-                <p><%= post.user.username %></p>
-                <p><%= post.body %></p>
-            </li>
+            <div class="user-detail-card row">
+                <div>
+                    <%= gravatar_for(post.user) %>
+                </div>
+                <div class="card-body column">
+                    <div class="card-username-name row">
+                        <p class="name"><%= post.user.name %></p><p class="username">@<%= post.user.username %></p>
+                    </div>
+                    <p><%= post.body %></p>
+                </div>
+            </div>
     <% end %>
 <% end %>

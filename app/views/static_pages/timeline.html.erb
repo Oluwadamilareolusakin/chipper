@@ -1,14 +1,22 @@
 <div class="feed-container row">
     <div class="user-section">
-        <%= gravatar_for(@user) %>
+        <h1 class="user-section-header">Do something you're daunting of today!</h1>
         <%= form_for @post do |f| %>
             <p><%= f.text_area :body, placeholder: 'Chip in something interesting...' %></p>
             <p><%= f.submit value: 'Chip in' %></p>
         <% end %>
     </div>
     <div class="feed">
-        <ol>
+            <div class="user-detail-card row">
+                    <div>
+                        <%= gravatar_for(current_user) %>
+                    </div>
+                    <div class="card-body column">
+                        <div class="card-username-name row">
+                            <p class="name"><%= current_user.name %></p><p class="username">@<%= current_user.username %></p>
+                        </div>
+                    </div>
+                </div>
             <%= render 'shared/post'%>
-        </ol>
     </div>
 </div>
