@@ -9,7 +9,7 @@ module SessionsHelper
     end
 
     def store_url
-        session[:fowarding_url] = request.get? request.original_url : nil
+        session[:fowarding_url] = request.get? ? request.original_url : nil
     end
 
     def current_user

@@ -9,8 +9,8 @@ module UsersHelper
         image_tag( gravatar_url, alt: user.name, class: 'gravatar')
     end
 
-    def current_user?(@user)
-        @user == current_user
+    def current_user?(user)
+        user == current_user
     end
 
     def logged_in_user?
@@ -22,7 +22,7 @@ module UsersHelper
     end
 
     def correct_user?
-        @user = User.find(params:id)
+        @user = User.find(params[:id])
         redirect_to root_path unless current_user?(@user)
     end
     
