@@ -1,4 +1,4 @@
-<% unless @posts.nil? %>
+<% if @posts.count > 1 %>
     <% @posts.collect do |post| %>
             <div class="user-detail-card row">
                 <div>
