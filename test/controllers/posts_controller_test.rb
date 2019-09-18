@@ -13,11 +13,13 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should get new' do
+    login_as(@user)
     get chip_path
     assert :success
   end
 
   test 'should create post' do
+    login_as(@user)
     post chip_path, params: { post: {body: 'This is a post', user_id: @user.id  }}
     assert_redirected_to timeline_path
   end

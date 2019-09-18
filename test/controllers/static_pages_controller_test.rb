@@ -1,13 +1,24 @@
 require 'test_helper'
 
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
-  test "should get timeline" do
-    get static_pages_timeline_url
-    assert_response :success
+  setup do
+    @user = users(:jim)
   end
 
-  test "should get landing_page" do
-    get static_pages_landing_page_url
+  test "timeline should redirect to login unless logged in" do
+    get timeline_path
+    assert_redirected_to login_path    
+  end
+
+  test 'should get timeline if logged in' do
+    login_as(@user)
+    get timeline_path
+    assert :success
+  end
+
+  test "should get landing page and redirect to timeline if user is logged in" do
+    login_as(@user)
+    get root_path
     assert_response :success
   end
 
