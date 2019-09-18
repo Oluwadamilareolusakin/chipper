@@ -5,7 +5,7 @@ module AccountActivationsHelper
 
     def attempt_to_activate(user, token)
         if user.activated
-            flash[:success] = "Your account has been activated already!"
+            flash[:success] = "Your account has already been activated"
         elsif user && user.authenticated?(token,:activation)
             activate user
             login(user)
