@@ -52,9 +52,14 @@
 
 .feed-container{
     .user-info{
-        background-color: rgb(58, 58, 58);
+        background-color: $main-green;
+        padding: .5em .4em;
         .card-username-name{
             color: white;
+            .username{
+                font-size: $post-username-font-size;
+                color: rgb(63, 63, 63);
+            }
         }
     }
     .user-section{

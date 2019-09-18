@@ -24,16 +24,6 @@ class User < ApplicationRecord
 
       
     end
-
-    def create_activation_token
-      self.activation_token = User.generate_token
-      self.activation_digest = User.digest(:activation_token)
-    end
-
-    def downcase_credentials
-      self.email = self.email.downcase 
-      self.username = self.username.downcase
-    end
     
     def User.generate_token
       SecureRandom.urlsafe_base64
@@ -53,7 +43,8 @@ class User < ApplicationRecord
     end
 
 
-    def authenticated?(token, digest)
+    def authenticated?(token, attribute)
+      digest  = send("#{attribute}_digest")
       return false if digest.nil?
 
       BCrypt::Password.new(digest).is_password?(token)
@@ -62,4 +53,26 @@ class User < ApplicationRecord
     def feed
       posts
     end
+    
+
+    def send_activation_email
+      UserMailer.account_activation(self).deliver_now
+    end
+    
+    def activate_user
+      update_attribute(:activated, true)
+      update_attribute(:activated_at, Time.zone.now)
+    end
+
+    private
+      def create_activation_token
+        self.activation_token = User.generate_token
+        self.activation_digest = User.digest(:activation_token)
+      end
+
+
+      def downcase_credentials
+        self.email.downcase!
+        self.username = self.username.downcase
+      end
 end
