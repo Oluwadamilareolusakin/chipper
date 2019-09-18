@@ -20,7 +20,8 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save
-            flash[:success] = "Welcome to Chipper #{@user.name}" 
+            send_activation_email
+            flash[:info] = "Welcome to Chipper #{@user.name} please activate your account!" 
             login(@user)
             redirect_to user_path(@user) 
         else

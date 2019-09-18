@@ -18,7 +18,7 @@ module SessionsHelper
     end
 
     def store_url
-        session[:fowarding_url] = request.get? ? request.original_url : nil
+        session[:fowarding_url] = request.get? || request.post? ? request.original_url : nil
     end
 
     def current_user
@@ -26,7 +26,7 @@ module SessionsHelper
             @current_user ||= User.find_by(id: user_id)
         elsif(user_id = cookies.signed[:user_id])
             user = User.find_by(id: user_id)
-            if user && user.authenticated?(cookies[:remember_token], user.remember_digest)
+            if user && user.authenticated?(cookies[:remember_token], :remember)
                 login(user)
                 @current_user = user
             end
