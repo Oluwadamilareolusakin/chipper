@@ -1,9 +1,8 @@
 class User < ApplicationRecord
   has_many :posts, dependent: :destroy
-  attr_accessor :remember_token
-
-  before_save { self.email = self.email.downcase }
-  before_save { self.username = self.username.downcase }
+  attr_accessor :remember_token, :activation_token
+  before_create :create_activation_token
+  before_save :downcase_credentials
   
     VALID_EMAIL_FORMAT = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
     VALID_USERNAME = /\A(?![.])(?![\s]{2})[a-zA-z_.0-9]+(?![.])\z/i
@@ -44,7 +43,8 @@ class User < ApplicationRecord
     end
 
 
-    def authenticated?(token, digest)
+    def authenticated?(token, attribute)
+      digest  = send("#{attribute}_digest")
       return false if digest.nil?
 
       BCrypt::Password.new(digest).is_password?(token)
@@ -53,4 +53,26 @@ class User < ApplicationRecord
     def feed
       posts
     end
+    
+
+    def send_activation_email
+      UserMailer.account_activation(self).deliver_now
+    end
+    
+    def activate_user
+      update_attribute(:activated, true)
+      update_attribute(:activated_at, Time.zone.now)
+    end
+
+    private
+      def create_activation_token
+        self.activation_token = User.generate_token
+        self.activation_digest = User.digest(:activation_token)
+      end
+
+
+      def downcase_credentials
+        self.email.downcase!
+        self.username = self.username.downcase
+      end
 end

@@ -1,9 +1,10 @@
+<% provide(:button_text, 'Chip in') %>
 <div class="feed-container row">
     <div class="user-section">
         <h1 class="user-section-header">Do something you're daunting of today!</h1>
         <%= form_for @post do |f| %>
             <p><%= f.text_area :body, placeholder: 'Chip in something interesting...' %></p>
-            <p><%= f.submit value: 'Chip in' %></p>
+            <p><%= f.submit yield(:button_text) %></p>
         <% end %>
     </div>
     <div class="feed">
