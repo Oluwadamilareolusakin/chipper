@@ -11,6 +11,7 @@ class StaticPagesController < ApplicationController
   def landing_page
     if current_user
         @user = current_user
+        @post = Post.new
         @posts = current_user.feed
         render 'timeline'
     else

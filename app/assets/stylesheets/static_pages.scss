@@ -51,6 +51,12 @@
 //Timeline
 
 .feed-container{
+    .user-info{
+        background-color: rgb(58, 58, 58);
+        .card-username-name{
+            color: white;
+        }
+    }
     .user-section{
         width: 40%;
         height: 100vh;
