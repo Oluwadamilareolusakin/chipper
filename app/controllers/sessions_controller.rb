@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
   def new
-    redirect_to current_user if logged_in?
+    redirect_to timeline_path if logged_in?
   end
 
   def create
@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     @user = find_by_email_or_username(string)
     if @user && @user.authenticate(params[:session][:password])
       login(@user)
-      remember(@user)
+      remember(@user) if params[:remember] == 1
       flash[:success] = "Welcome, #{@user.name}"
       redirect_back_or_to timeline_path
     else
@@ -19,6 +19,10 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    logout if logged_in?
+   if logged_in?
+    logout 
+   else
+    redirect_to root_path 
+   end
   end
 end
