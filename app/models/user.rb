@@ -25,6 +25,11 @@ class User < ApplicationRecord
       
     end
 
+    def create_activation_token
+      self.activation_token = User.generate_token
+      self.activation_digest = User.digest(:activation_token)
+    end
+
     def downcase_credentials
       self.email = self.email.downcase 
       self.username = self.username.downcase
