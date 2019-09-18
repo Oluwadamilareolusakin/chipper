@@ -6,14 +6,15 @@ class PostsController < ApplicationController
     end
     
     def new
-        @post = current_user.posts.build
+        logged_in_user? unless logged_in?
+        @post = current_user.posts.build if logged_in?
     end
 
     def create
         @post = current_user.posts.build(post_params)
         if !current_user.activated
-            flash.now[:success] = "Please activate your account with the link in your email"        
-            @post.destroy
+            flash[:alert] = "Please activate your account with the link in your email"  
+            redirect_to timeline_path      
         elsif @post.save && current_user.activated        
             flash[:success] = 'You chipped in!'
             redirect_to timeline_path
