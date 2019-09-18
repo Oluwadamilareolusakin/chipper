@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     @user = find_by_email_or_username(string)
     if @user && @user.authenticate(params[:session][:password])
       login(@user)
-      remember(@user) if params[:remember] == 1
+      remember(@user)
       flash[:success] = "Welcome, #{@user.name}"
       redirect_back_or_to timeline_path
     else

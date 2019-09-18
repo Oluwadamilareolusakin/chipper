@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :posts, dependent: :destroy
-  attr_accessor :remember_token
+  attr_accessor :remember_token, :activation_token
   before_create :create_activation_token
   before_save :downcase_credentials
   
