@@ -1,0 +1,8 @@
+<h1>Welcome to Chipper <%= @user.name%>!</h1>
+
+<p>Please activate your account with the link below</p>
+<%= link_to  "Activate", edit_account_activation_url(@user.activation_token, email: @user.email) %>
+
+<p>If you didn't sign up for a chipper account, please ignore this mail</p>
+
+<%= asset_url('Logo.svg') %>
