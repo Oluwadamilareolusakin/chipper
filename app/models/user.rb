@@ -1,9 +1,8 @@
 class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   attr_accessor :remember_token
-
-  before_save { self.email = self.email.downcase }
-  before_save { self.username = self.username.downcase }
+  before_create :create_activation_token
+  before_save :downcase_credentials
   
     VALID_EMAIL_FORMAT = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
     VALID_USERNAME = /\A(?![.])(?![\s]{2})[a-zA-z_.0-9]+(?![.])\z/i
@@ -24,6 +23,11 @@ class User < ApplicationRecord
       end
 
       
+    end
+
+    def downcase_credentials
+      self.email = self.email.downcase 
+      self.username = self.username.downcase
     end
     
     def User.generate_token
