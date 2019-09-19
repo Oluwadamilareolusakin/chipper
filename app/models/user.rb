@@ -50,9 +50,9 @@ class User < ApplicationRecord
       BCrypt::Password.new(digest).is_password?(token)
     end
 
-    def User.create_reset_token
+    def create_reset_token
       self.reset_token = User.generate_token
-      self.reset_digest = User.digest(reset_token)
+      update_attribute(:reset_digest, User.digest(reset_token))
     end
 
     def send_password_reset_email
@@ -76,7 +76,7 @@ class User < ApplicationRecord
     private
       def create_activation_token
         self.activation_token = User.generate_token
-        self.activation_digest = User.digest(activation_token)
+        update_attribute(:activation_digest, User.digest(activation_token))
       end
 
 
