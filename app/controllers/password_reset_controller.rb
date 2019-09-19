@@ -3,10 +3,10 @@ class PasswordResetController < ApplicationController
   end
 
   def create
-    user = User.find_by(email: params[:reset][:email])
+    @user = User.find_by(email: params[:reset][:email])
     if user
-      user.create_reset_token
-      user.send_password_reset_email
+      @user.create_reset_token
+      @user.send_password_reset_email
       flash[:success] = "Please check your email for password reset instructions"
       redirect_to login_path
     else
