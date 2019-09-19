@@ -10,6 +10,7 @@ module SessionsHelper
 
     def login(user)
         session[:user_id] = user.id
+        flash[:notice] = "Please activate your account or you may lose it if you forget the password"
     end
 
     def redirect_back_or_to(default)
