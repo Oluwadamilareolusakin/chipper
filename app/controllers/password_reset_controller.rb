@@ -24,7 +24,7 @@ class PasswordResetController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
-    @user.update(password_reset_params)
+    user = User.find(params[:id])
+    user.update(password_reset_params)
   end
 end
