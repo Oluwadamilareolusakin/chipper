@@ -1,0 +1,9 @@
+<% if controller.action_name == 'landing_page' %>  
+  <nav class="navigation row">
+      <%= render 'layouts/navigation' %>
+  </nav>
+<% elsif %>
+  <nav class="navigation-with--bg row">
+    <%= render 'layouts/navigation' %>
+  </nav>    
+<% end %>
