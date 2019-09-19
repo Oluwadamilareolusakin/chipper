@@ -1,0 +1,6 @@
+<% provide(:button_text, 'Send password reset instructions') %>
+
+<%= form_for(:reset, url: reset_path) do |f| %>
+    <%= f.email_field :email %>
+    <%= f.submit yield(:button_text)%> 
+<% end %>
