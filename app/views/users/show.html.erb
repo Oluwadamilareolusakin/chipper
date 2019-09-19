@@ -1,7 +1,5 @@
+<% provide(:title, @user.name) %>
 <div class="user-profile-header">
-  <%  if is_logged_in? %>
-    <%= link_to 'Edit your profile', edit_user_path(@user), class: 'edit-user-button' %> 
-  <% end %>
 
   <div class="user-profile-info row">
     <div class="user-profile-image">
@@ -11,7 +9,7 @@
       <div class="name-username-container">
           <p>
             <strong>
-              <%= @user.username %>
+              @x<%= @user.username %>
             </strong>
           </p>
           <p>
@@ -37,7 +35,12 @@
         </div>
       </div>
       <div class="profile-follow-container row">
-        <%= link_to  "Follow", edit_user_path(@user), class:'profile-follow-button'%>
+        <%unless @user == current_user%>
+          <%= link_to  "Follow", edit_user_path(@user), class:'profile-follow-button'%>
+        <% end %>
+        <%  if logged_in? && @user == current_user %>
+          <%= link_to 'Edit your profile', edit_user_path(@user), class: 'edit-user-button' %> 
+        <% end %>
       </div>
     </div>
   </div>

@@ -1,0 +1,6 @@
+Hello, <%= @user.name %>
+
+Please activate your Chipper Account with this link:
+<%= edit_account_activation_url(@user.activation_token, email: @user.email) %>
+
+If you didn't sign up for a Chipper account, please ignore this mail.

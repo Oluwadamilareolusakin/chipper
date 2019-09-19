@@ -1,5 +1,10 @@
+<%= provide(:title, 'Sign up') %>
+<% provide(:button_text, 'Sign up')%>
+
 <h1 class = "admin-users-table-title center-aligned-text">Create a Chipper Account</h1>
 
 <%= render 'form', user: @user %>
 
-<%= link_to 'Login', login_path %>
+<p class="signup-login-section">
+   Already have an account ? <%= link_to 'Login', login_path, class:'signup-login-btn' %>
+</p>

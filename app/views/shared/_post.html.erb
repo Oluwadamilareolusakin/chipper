@@ -1,0 +1,16 @@
+<% if @posts.any? %>
+    <% @posts.each do |post| %>
+            <div class="user-detail-card row">
+                    <%= gravatar_for(post.user) %>
+                <div class="card-body column">
+                    <div class="card-username-name row">
+                        <p class="name"><%= post.user.name %></p><p class="post-username">@<%= post.user.username %></p>
+                    </div>
+                    <p class="post-body"><%= post.body %></p>
+                    <p class="created-at">
+                        <%= time_ago_in_words(post.created_at)%>
+                    </p>
+                </div>
+            </div>
+    <% end %>
+<% end %>

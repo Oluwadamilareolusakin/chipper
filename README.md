@@ -1,24 +1,9 @@
-# README
+# Chipper
+#### The social network for the dauntless
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
+This is a side project of mine built in Ruby on Rails. It is a social network that allows you create posts(Chip in) to share your daunting experiences and your methods in surmounting them
 
-Things you may want to cover:
+Here's a [live version](https://chipper-io.herokuapp.com) for you to try out.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Find out more about what I'm up to on [Medium](https://medium.com/@oluwadamilareo_), [Twitter](https://twitter.com/oluwadamilareo_) and [Instagram](https:instagram.com/oluwadamilareol_)

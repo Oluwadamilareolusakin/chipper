@@ -1,15 +1,17 @@
 class SessionsController < ApplicationController
 
   def new
-    @user = User.new
+    redirect_to timeline_path if logged_in?
   end
 
   def create
-    user = User.find_by( email: params[:session][:email].downcase )
-    if user && user.authenticate(params[:session][:password])
-      login(user)
-      flash[:success] = "Welcome, #{user.name}"
-      redirect_to user
+    string = params[:session][:username_or_email]
+    @user = find_by_email_or_username(string)
+    if @user && @user.authenticate(params[:session][:password])
+      login(@user)
+      remember(@user)
+      flash[:success] = "Welcome, #{@user.name}"
+      redirect_back_or_to timeline_path
     else
       flash[:danger] = 'Invalid password or email'
       render 'new'
@@ -17,6 +19,10 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    
+   if logged_in?
+    logout 
+   else
+    redirect_to root_path 
+   end
   end
 end

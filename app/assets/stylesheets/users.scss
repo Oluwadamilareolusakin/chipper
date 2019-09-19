@@ -10,14 +10,12 @@
     @extend %background-image;
     width: 100%;
     height: 300px;
-    background-image: url('1.jpg');
+    background-image: asset_url('1.jpg');
     padding: 1em 4em;
     position: relative;
     
     .edit-user-button{
         @extend %teal-button;
-        position: absolute;
-        right: 5%;
     }
     
     .user-profile-info{
@@ -56,6 +54,36 @@
         
     }
 
+}
+
+.avatar-edit-holder{
+    justify-content: center;
+
+    img{
+        border-radius: 50%;
+        width: 150px;
+        margin: 1em 0 0 0;
+
+        &:hover{
+            background: black;
+        }
+    }
+}
+
+.signup-login-section{
+    position: absolute;
+    top: 2em;
+    right: 2em;
+    font-family: 'Manjari';
+}
+
+.signup-login-btn{
+    border-radius: $round-button-radius;
+    background-color: $main-pink;
+    color: white;
+    padding: $btn-padding;
+    font-size: $btn-font-size;
+    font-family: $btn-font;
 }
 
 // User index page

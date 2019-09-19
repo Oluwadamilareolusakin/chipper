@@ -1,0 +1,107 @@
+// Place all the styles related to the static_pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//Landing page
+
+@import 'component_styles';
+
+
+.landing-page-container{
+    height: 100vh;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0em 0 0 4em;
+    background-image: asset_url('Background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+
+    .landing-page-header{
+        font-size: 5em;
+        color: rgb(34, 34, 34);
+        line-height: 1.2em;
+        font-family: 'Manjari', sans-serif;
+    }
+    
+    .landing-page-subtext{
+        margin: .3em 0 .4em 0;
+        font-size: 1.6em;
+        font-family: 'Manjari', sans-serif;
+        color: $main-pink;
+    }
+    
+    .hero-cta{
+        background-color: $main-pink;
+        @extend %button-bg;
+        padding: .5em 2em;
+        font-size: 1em;
+        transition: .5s;
+
+        &:hover{
+            background-color: rgb(56, 138, 138);
+            text-decoration: none;
+        }
+    }
+    
+}
+
+//Timeline
+
+.feed-container{
+    .user-info{
+        background-color: $main-green;
+        padding: .5em .4em;
+        .card-username-name{
+            color: white;
+            .username{
+                font-size: $post-username-font-size;
+                color: rgb(63, 63, 63);
+            }
+        }
+    }
+    .user-section{
+        width: 40%;
+        height: 100vh;
+        background-color: rgb(58, 58, 58);
+        padding: 1em 2em;
+        position: sticky;
+        position: -webkit-sticky;
+        top: 0em;
+
+        font-family: 'Manjari', sans-serif;
+        
+        .user-section-header{
+            font-size: 2em;
+            color: white;
+            text-align: center;
+            margin: 1em 0;
+        }
+
+        textarea{
+            width: 100%;
+            height: 200px;
+            padding: 1em;
+        }
+
+        input[type="submit"]{
+            width: 100%;
+            background-color: $main-pink;
+            color: white;
+            border: none;
+            padding: $btn-padding;
+        }
+    }
+
+    .feed{
+        width: 60%;
+        height: 100vh;
+        align-items: flex-start;
+        overflow: auto;
+        overflow-y: auto;
+      
+    }
+}
+    

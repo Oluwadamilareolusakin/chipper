@@ -1,6 +1,14 @@
+<% provide(:title, 'Edit Profile') %>
+<% provide(:button_text, 'Save Changes')%>
 <h1 class = "admin-users-table-title center-aligned-text">Edit your profile</h1>
+
+<div class="avatar-edit-holder row">
+    <div class="column">
+        <%= gravatar_for(@user) %>
+        <a rel="noopener" target="_blank" href="https://gravatar.com/emails">Change your avatar</a>
+    </div>
+</div>
 
 <%= render 'form', user: @user %>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Delete your account', @user, method: :delete, data: {confirm: 'Are you sure you want to delete your account? This is not reversible'} %>

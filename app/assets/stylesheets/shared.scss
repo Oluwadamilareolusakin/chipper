@@ -1,5 +1,83 @@
 @import 'component_styles';
 
+html{
+    ::-webkit-scrollbar{
+        width: 4px;
+        
+    }
+    
+    
+    ::-webkit-scrollbar-track{
+        background: #f1f1f1;
+    }
+    
+    ::-webkit-scrollbar-thumb{
+        display: none;
+        border-radius: 50px;
+        background: #888;
+        &:hover{
+           display: inherit;
+        }
+    }
+}
+%navigation{
+    padding: .4em 4em .4em 4em;
+    z-index: 1;
+    width: 100%;
+    justify-content: space-between;
+    font-family: 'Lato';
+
+    .logo{
+        width: 120px;
+    }
+
+    .profile-btn{
+        margin-right: 1em;
+        border-radius: $round-button-radius;
+        background-color: $main-pink;
+        padding: $btn-padding;
+        color: white;
+        font-size: $btn-font-size;                                                                                                                                                                                                                                                                                                               
+    }
+
+    .nav-login-btn{
+        border: 3px solid $main-pink;
+        margin: 0 1em;
+        padding: $border-btn-padding;
+        font-size: $btn-font-size;
+        border-radius: $round-button-radius;
+    }
+
+    .nav-signup-btn{
+        font-size: $btn-font-size;
+        background-color: $main-green;
+        color: white;
+        padding: $btn-padding;
+        border-radius: $round-button-radius;
+    }
+
+    .logout-btn{
+        font-size: $btn-font-size;
+        border-radius: $round-button-radius;
+        padding: $border-btn-padding;
+        border: 3px solid rgb(43, 43, 43);
+    }
+}
+
+.navigation{
+    @extend %navigation;
+}
+
+.navigation-with--bg{
+    @extend %navigation;
+    background-color: white;
+}
+
+main{
+    padding-top: 0em;
+    box-sizing: border-box;
+}
+
 .center-aligned-text{
     text-align: center;
     font-family: 'Nanum', sans-serif;
@@ -15,24 +93,28 @@
 .user-admin-data-form{
     width: 100%;
     justify-content: center;
-    padding: 2em 0 0 0;
+    padding: 1em 0 0 0;
     font-family: 'Roboto', sans-serif;
 
     form{
         box-sizing: border-box;
-        width: 40%;
+        width: 30%;
     }
 
-    input{
-        box-shadow: 0 0 .2em .1em rgba(0, 0, 0, 0.274);
+    input[type = "text"], input[type = "password"], input[type = "number"]{
+        box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.274);
         padding: 0 .5em;
-        height: 2.3em;
+        height: 2em;
+    }
+
+    input[type = "submit"]{
+        padding: .8em 0;
     }
 
     .field, input{
         width: 100%;
         border: none;
-        margin: .3em 0;
+        margin: .4em 0;
     }
 
     .actions{
@@ -65,6 +147,8 @@
 pre.debug_dump{
     border: 1px solid rgba(209, 209, 209, 0.596);
     border-radius: 1em;
+    position: absolute;
+    bottom: 0;
     margin-top: 2em;
     font-size: .7em;
     width: 98%;
@@ -97,7 +181,7 @@ pre.debug_dump{
     top: 0;
     font-family: 'Nanum', sans-serif;
     font-size: .8em;
-    z-index: 1;
+    z-index: 2;
 }
 
 .alert-success{
@@ -106,6 +190,11 @@ pre.debug_dump{
 }
 
 .alert-danger{
-    color: rgb(70, 0, 0);
-    background-color: rgba(255, 52, 16, 0.856);
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 58, 84);
+}
+
+
+a:hover{
+    text-decoration: none;
 }

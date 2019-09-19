@@ -1,0 +1,5 @@
+<% provide(:button_text, 'Reset your password') %>
+<%= form_for @user do |f| %>
+ <p><%= f.password_field :password %></p>
+ <p><%= f.submit yield(:button_text) %></p>
+<% end %>

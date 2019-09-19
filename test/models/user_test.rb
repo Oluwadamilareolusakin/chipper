@@ -2,8 +2,8 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   setup do
-    @user = users(:one)
-    @user.password = 'Dammiiee12'
+    @user = users(:two)
+    @user.password = 'Dammiiee12!'
   end
 
   test "user must be valid" do
@@ -50,5 +50,11 @@ class UserTest < ActiveSupport::TestCase
     user_duplicate = @user.dup
     user_duplicate.nationality = ' '
     assert_not user_duplicate.valid?
+  end
+
+  test 'authenticated? should return false for user with nil remember_digest' do
+    @user.remember
+    @user.remember_digest = nil
+    assert_not @user.authenticated?(:remember, @user.remember_token )
   end
 end
