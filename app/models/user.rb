@@ -1,7 +1,7 @@
 class User < ApplicationRecord
-  attr_accessor :remember_token, :activation_token
+  attr_accessor :remember_token, :activation_token, :reset_token
   has_many :posts, dependent: :destroy
-  before_create :create_activation_token
+  before_save :create_activation_token
   before_save :downcase_credentials
   
     VALID_EMAIL_FORMAT = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
@@ -43,11 +43,20 @@ class User < ApplicationRecord
     end
 
 
-    def authenticated?(token, attribute)
+    def authenticated?(attribute, token)
       digest  = send("#{attribute}_digest")
       return false if digest.nil?
 
       BCrypt::Password.new(digest).is_password?(token)
+    end
+
+    def create_reset_token
+      self.reset_token = User.generate_token
+      self.reset_digest = User.digest(reset_token)
+    end
+
+    def send_password_reset_email
+      UserMailer.password_reset(self).deliver_now
     end
 
     def feed
@@ -67,7 +76,7 @@ class User < ApplicationRecord
     private
       def create_activation_token
         self.activation_token = User.generate_token
-        self.activation_digest = User.digest(:activation_token)
+        self.activation_digest = User.digest(activation_token)
       end
 
 

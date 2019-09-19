@@ -18,4 +18,8 @@ Rails.application.routes.draw do
   resources :users
   resources :account_activations, only: [:edit]
 
+  get '/reset', to: 'password_reset#new'
+  post '/reset', to: 'password_reset#create'
+  get '/new_password', to: 'password_reset#edit'
+  post '/new_password', to: 'password_reset#update'
 end

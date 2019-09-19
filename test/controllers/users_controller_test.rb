@@ -51,6 +51,6 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
   test 'should destroy user' do
     delete user_path(@user)
-    assert_redirected_to users_path
+    assert_redirected_to root_path
   end
 end

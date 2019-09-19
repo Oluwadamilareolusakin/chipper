@@ -49,7 +49,7 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])    
         @user.destroy
         flash[:success] = 'Your profile was deleted successfully'
-        redirect_to users_path
+        redirect_to root_path
     end
 
     
