@@ -8,6 +8,14 @@ $border-btn-padding: .3em 1em;
 $btn-padding: .4em 1em;
 $btn-font: 'Muli', sans-serif;
 $post-username-font-size: .8em;
+$primary-font: 'Manjari', sans-serif;
+$input-padding: .7em .6em;
+$center-vh: 80vh;
+
+%pink-button{
+    @extend %button-bg;
+    background-color: $main-pink;
+}
 
 %button-bg{
     padding: .3em 1.2em;
