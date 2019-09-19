@@ -20,14 +20,48 @@ html{
     }
 }
 %navigation{
-    padding: .4em 4em .4em 4em;
+    padding: 1.3em 2em 1.3em 4em;
     z-index: 1;
     width: 100%;
     justify-content: space-between;
     font-family: 'Lato';
 
+    @media #{$mq-medium}{
+        padding: .4em 2em .4em 4em; 
+    }
+
     .logo{
-        width: 120px;
+        width: 160px;
+
+        @media #{$mq-medium}{
+           width: 130px; 
+        }
+    }
+
+    .nav-user-actions{
+        justify-content: flex-end;
+
+        .chip-in{
+            margin-right: 1em;
+            @extend %pink-button;
+        }
+
+        .menu-bar{
+            display: none; 
+            font-size: 2.5em; 
+            display: inline;
+            @media #{$mq-medium}{
+                display: none; 
+            }
+        }
+
+
+        a{
+            display: none;
+            @media #{$mq-medium}{
+                display: inline;
+            }
+        }
     }
 
     .profile-btn{
@@ -98,17 +132,32 @@ main{
 
     form{
         box-sizing: border-box;
-        width: 30%;
+        width: 80%;
+        @media #{$mq-medium} {
+            width: 40%;            
+        }
     }
 
     input[type = "text"], input[type = "password"], input[type = "number"]{
         box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.274);
         padding: 0 .5em;
-        height: 2em;
+        height: 3em;
+        font-size: 2em;
+
+        @media #{$mq-medium}{
+            height: 2.3em;
+            font-size: 1em;
+        }
     }
 
     input[type = "submit"]{
-        padding: .8em 0;
+        padding: 1em 0;
+        font-size: 2em;
+
+        @media #{$mq-medium}{
+            padding: .8em 0;
+            font-size: 1em;
+        }
     }
 
     .field, input{
@@ -123,10 +172,23 @@ main{
         }
     }
 
+    .delete-profile-button{
+        color: rgb(172, 38, 38);
+    }
+    
+    .corner-form-link{
+        text-decoration: underline;
+        font-size: 1.5em;
+        font-style: italic;
+    }
+
     h5{
-        margin: -.8em 0 0 0;
-        font-size: .6em;
+        margin: -.2em 0 0 0;
         color: teal;
+        font-size: 1em;
+        @media #{$mq-medium}{
+            font-size: .6em;
+        }
     }
 }
 
