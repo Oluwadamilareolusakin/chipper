@@ -1,4 +1,8 @@
 class PasswordResetController < ApplicationController
+  before_action :get_user, only: [:edit, :update]
+  before_action :valid_user?, only: [:edit, :update]
+  before_action :check_expiration, only: [:edit, :update]
+
   def new
   end
 
@@ -16,15 +20,10 @@ class PasswordResetController < ApplicationController
   end
 
   def edit
-    @user = User.find_by(email: params[:email])
-    if !@user || !@user.authenticated?(:reset, params[:id])
-      flash[:danger] = "Invalid password reset link"
-      redirect_to root_path
-    end
+    
   end
 
   def update
-    @user = User.find(params[:id])
      if @user.update(password_reset_params)
       login @user
       flash[:success] = "Your password has been reset"

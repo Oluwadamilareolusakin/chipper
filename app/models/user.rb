@@ -44,7 +44,7 @@ class User < ApplicationRecord
 
 
     def authenticated?(attribute, token)
-      digest  = send("#{attribute}_digest")
+      digest = send("#{attribute}_digest")
       return false if digest.nil?
 
       BCrypt::Password.new(digest).is_password?(token)
@@ -53,6 +53,11 @@ class User < ApplicationRecord
     def create_reset_token
       self.reset_token = User.generate_token
       update_attribute(:reset_digest, User.digest(reset_token))
+      update_attribute(:reset_sent_at, Time.zone.now)
+    end
+
+    def password_reset_expired?
+      reset_sent_at < 2.hours.ago
     end
 
     def send_password_reset_email
