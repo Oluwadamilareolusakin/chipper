@@ -1,5 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Lato|Manjari|Muli|Nanum+Gothic|Roboto&display=swap');
 
+//Breaking Points
+
+$small-bp: 48em; //small breaking point
+$medium-bp: 64.9em; //medium breaking point
+$large-bp: 85.375em; //large breaking point
+$xlarge-bp: 120em; //extra large breaking point
+$xxlarge-bp: 160em; //extra extra large breaking point
+
+//Media Queries
+
+$mq-small: "(min-width: #{$small-bp})";
+$mq-medium: "(min-width: #{$medium-bp})";
+$mq-large: "(min-width: #{$large-bp})";
+$mq-xlarge: "(min-width: #{$xlarge-bp})";
+$mq-xxlarge: "(min-width: #{$xxlarge-bp})";
+$mq-retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
 
 
 
@@ -8,6 +24,7 @@ $main-pink: rgb(255, 102, 128);
 $round-button-radius: .2em;
 $btn-font-size: .8em;
 $border-btn-padding: .3em 1em;
+$small-btn-padding: .5em 1em;
 $btn-padding: .4em 1em;
 $btn-font: 'Muli', sans-serif;
 $post-username-font-size: .8em;
