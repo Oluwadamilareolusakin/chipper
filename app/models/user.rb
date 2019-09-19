@@ -50,7 +50,7 @@ class User < ApplicationRecord
       BCrypt::Password.new(digest).is_password?(token)
     end
 
-    def create_reset_token
+    def User.create_reset_token
       self.reset_token = User.generate_token
       self.reset_digest = User.digest(reset_token)
     end
