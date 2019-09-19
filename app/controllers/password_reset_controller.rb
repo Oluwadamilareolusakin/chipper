@@ -16,8 +16,8 @@ class PasswordResetController < ApplicationController
   end
 
   def edit
-    @user = User.find_by(email: params[:email])
-    if !@user || !@user.authenticated?(:reset, params[:id])
+    user = User.find_by(email: params[:email])
+    if !user || !user.authenticated?(:reset, params[:id])
       flash[:danger] = "Invalid password reset link"
       redirect_to root_path
     end
