@@ -1,15 +1,15 @@
 module AccountActivationsHelper
-    def activate(@user)
-        @user.activate_@user
+    def activate(user)
+        user.activate_user
     end
 
-    def attempt_to_activate(@user, token)
-        if @user && @user.activated
+    def attempt_to_activate(user, token)
+        if user && user.activated
             flash[:success] = "Your account has already been activated!"
             redirect_to timeline_path
-        elsif @user && !@user.activated && @user.authenticated?(:activation, token)
-            activate @user
-            login(@user)
+        elsif user && !user.activated && user.authenticated?(:activation, token)
+            activate user
+            login(user)
             flash[:success] = "Your account has been activated successfully!"
             redirect_to timeline_path
         else
