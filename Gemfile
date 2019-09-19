@@ -18,6 +18,9 @@ gem 'sass-rails', '~> 5.0'
 #Use faker to seed database
 gem 'faker'
 
+#Font awesome
+gem 'font-awesome-rails'
+
 #Use will paginate for pagination
 gem 'will_paginate'
 
