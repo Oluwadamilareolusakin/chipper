@@ -1,6 +1,13 @@
 <% provide(:button_text, 'Send password reset instructions') %>
 
-<%= form_for(:reset, url: reset_path) do |f| %>
-    <%= f.email_field :email %>
-    <%= f.submit yield(:button_text)%> 
-<% end %>
+<div class="one-field-form column">
+    <h1>Enter your email to get reset instructions</h1>
+    <%= form_for(:reset, url: reset_path) do |f| %>
+        <p>
+            <%= f.email_field :email, placeholder:'Email address' %>
+        </p>
+        <p>
+            <%= f.submit yield(:button_text)%> 
+        </p>
+    <% end %>
+</div>

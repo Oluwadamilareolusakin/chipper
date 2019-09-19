@@ -27,11 +27,14 @@
       <h5>Username can contain any letter and an underscore</h6>
     </div>
 
-    <div class="field">
+    <% unless controller.action_name == 'edit' || controller.action_name == 'update' %>
+      <div class="field">
         <%= form.password_field :password, placeholder: "Password" %>
         <h5>Password must contain a lowercase, uppercase and any special character</h6>
       </div>
-    <% if controller.action_name == 'edit' %>
+    <% end %>
+    
+    <% if controller.action_name == 'edit' || controller.action_name == 'update' %>
       <div class="field">
           <%= form.number_field :age, placeholder: "Age" %>
       </div>
@@ -44,6 +47,15 @@
       <div class="field">
           <%= form.text_field :gender, placeholder: "Gender" %>
       </div>
+
+      <div class="field">
+          <%= form.text_field :password, placeholder: 'Password' %>
+      </div>
+      
+      <em>
+        <%= link_to 'Delete your account?', @user, method: :delete, data: {confirm: 'Are you sure you want to delete your account? This is not reversible'}, class: 'delete-profile-button corner-form-link' %>
+      </em>
+
     <% end  %>
     
     <div class="actions">

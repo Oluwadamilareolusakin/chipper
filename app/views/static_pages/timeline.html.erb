@@ -8,17 +8,6 @@
         <% end %>
     </div>
     <div class="feed">
-            <div class="user-detail-card user-info row">
-                    <div>
-                        <%= gravatar_for(current_user) %>
-                    </div>
-                    <div class="card-body column">
-                        <div class="card-username-name">
-                            <p class="name"><%= current_user.name %></p>
-                            <p class="username">@<%= current_user.username %></p>
-                        </div>
-                    </div>
-                </div>
-            <%= render 'shared/post'%>
+        <%= render 'shared/post'%>
     </div>
 </div>

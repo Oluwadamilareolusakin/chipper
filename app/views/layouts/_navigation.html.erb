@@ -1,16 +1,19 @@
 <% unless (controller.controller_name == 'users' || controller.controller_name == 'sessions') && (controller.action_name == 'new' || controller.action_name == 'create')%>
     <%= link_to image_tag('Logo.svg'), root_path, class: 'logo' %>
-    <div class="nav-user-actions">
-        <% unless current_user.nil? %>
-            <%= link_to  "Chip in", chip_path %>
-            <% unless controller.controller_name == 'users' && controller.action_name == 'show' %>
-                <%= link_to  "Profile", current_user, class: 'profile-btn' %>
+    <div class="nav-user-actions row">
+        <div>
+                <%= fa_icon "bars", class: "menu-bar"%>
+            <% unless current_user.nil? %>
+                <%= link_to  "Chip in", chip_path, class: 'chip-in' %>
+                <% unless controller.controller_name == 'users' && controller.action_name == 'show' %>
+                    <%= link_to  "Profile", current_user, class: 'profile-btn' %>
+                <% end %>
+                <%= link_to  "Logout", logout_path, class: 'logout-btn', method: :delete  %> 
             <% end %>
-            <%= link_to  "Logout", logout_path, class: 'logout-btn', method: :delete  %> 
-        <% end %>
-        <% unless logged_in? %>
-            <%= link_to  "Login", login_path, class: 'nav-login-btn' %>
-            <%= link_to  "Sign up", signup_path, class: 'nav-signup-btn' %>
-        <% end %>
+            <% unless logged_in? %>
+                <%= link_to  "Login", login_path, class: 'nav-login-btn' %>
+                <%= link_to  "Sign up", signup_path, class: 'nav-signup-btn' %>
+            <% end %>
+        </div>
     </div>
 <% end %>

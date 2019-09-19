@@ -4,11 +4,12 @@
 
 <div class="avatar-edit-holder row">
     <div class="column">
-        <%= gravatar_for(@user) %>
+        <div class="avatar">
+            <%= gravatar_for(@user) %>
+        </div>
         <a rel="noopener" target="_blank" href="https://gravatar.com/emails">Change your avatar</a>
     </div>
 </div>
 
 <%= render 'form', user: @user %>
 
-<%= link_to 'Delete your account', @user, method: :delete, data: {confirm: 'Are you sure you want to delete your account? This is not reversible'} %>
