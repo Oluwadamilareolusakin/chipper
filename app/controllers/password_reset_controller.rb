@@ -25,6 +25,15 @@ class PasswordResetController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.update(password_reset_params)
+     if @user.update(password_reset_params)
+      login @user
+      flash[:success] = "Your password has been reset"
+      redirect_to root_path
+     elsif params[:user][:password].empty?
+      @user.errors.add(:password, "can't be empty")
+      render 'edit'
+     else
+      render 'edit'
+     end
   end
 end
