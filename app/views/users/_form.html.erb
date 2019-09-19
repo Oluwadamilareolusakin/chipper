@@ -47,9 +47,15 @@
       <div class="field">
           <%= form.text_field :gender, placeholder: "Gender" %>
       </div>
+
       <div class="field">
           <%= form.text_field :password, placeholder: 'Password' %>
       </div>
+      
+      <em>
+        <%= link_to 'Delete your account?', @user, method: :delete, data: {confirm: 'Are you sure you want to delete your account? This is not reversible'}, class: 'delete-profile-button corner-form-link' %>
+      </em>
+
     <% end  %>
     
     <div class="actions">
