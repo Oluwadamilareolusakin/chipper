@@ -50,6 +50,10 @@ class User < ApplicationRecord
       BCrypt::Password.new(digest).is_password?(token)
     end
 
+    def send_password_reset_email
+      UserMailer.password_reset(self).deliver_now
+    end
+
     def feed
       posts
     end

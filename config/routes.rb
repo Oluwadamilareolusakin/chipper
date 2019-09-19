@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'password_reset/new'
+  get 'password_reset/edit'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'static_pages#landing_page'
 
