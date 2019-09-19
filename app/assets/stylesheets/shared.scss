@@ -5,8 +5,7 @@ html{
         width: 4px;
         
     }
-    
-    
+        
     ::-webkit-scrollbar-track{
         background: #f1f1f1;
     }
@@ -70,6 +69,7 @@ html{
 
 .navigation-with--bg{
     @extend %navigation;
+    box-shadow: .1px 0 5px .5px black;
     background-color: white;
 }
 
@@ -173,7 +173,7 @@ pre.debug_dump{
 
 .alert{
     text-align: center;
-    width: 40%;
+    width: 50%;
     margin: 1em auto;
     padding: .2em 0;
     border-radius: .2em;
@@ -192,6 +192,11 @@ pre.debug_dump{
 .alert-danger{
     color: rgb(255, 255, 255);
     background-color: rgb(255, 58, 84);
+}
+
+.alert-notice{
+    color: white;
+    background-color: orange;
 }
 
 
