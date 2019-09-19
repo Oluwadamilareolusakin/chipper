@@ -52,7 +52,7 @@ class User < ApplicationRecord
 
     def create_reset_token
       self.reset_token = User.generate_token
-      self.reset_digest = User.digest(reset_token)
+      reset_digest = User.digest(reset_token)
     end
 
     def send_password_reset_email
