@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   attr_accessor :remember_token, :activation_token
   has_many :posts, dependent: :destroy
-  before_create :create_activation_token
+  before_save :create_activation_token
   before_save :downcase_credentials
   
     VALID_EMAIL_FORMAT = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
@@ -43,7 +43,7 @@ class User < ApplicationRecord
     end
 
 
-    def authenticated?(token, attribute)
+    def authenticated?(attribute, token)
       digest  = send("#{attribute}_digest")
       return false if digest.nil?
 
@@ -67,7 +67,7 @@ class User < ApplicationRecord
     private
       def create_activation_token
         self.activation_token = User.generate_token
-        self.activation_digest = User.digest(:activation_token)
+        self.activation_digest = User.digest(activation_token)
       end
 
 
