@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:session][:password])
       login(@user)
       remember(@user)
-      flash[:success] = "Welcome, #{@user.name}"
+      flash[:success] = "Welcome, #{@user.name}" if @user.activated
       redirect_back_or_to timeline_path
     else
       flash[:danger] = 'Invalid password or email'
