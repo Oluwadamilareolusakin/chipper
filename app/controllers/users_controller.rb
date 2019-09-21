@@ -12,9 +12,10 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
     end
     
-    def new
+    def sign_up
         redirect_to current_user if logged_in?
         @user = User.new
+        render 'new'
     end
     
     def create

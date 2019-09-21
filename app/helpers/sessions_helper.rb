@@ -77,8 +77,7 @@ module SessionsHelper
 
     def is_admin?
         unless current_user.is_admin
-            flash[:danger] = "You don't have permission to access this page"
-            redirect_to root_path
+            render 'layouts/forbidden'
         end
     end
 end
