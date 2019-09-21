@@ -1,12 +1,12 @@
-<div class="column menu-menu" id="menu-modal">
-    <span id="close">
+<div class="column" id="modalMenu">
+    <span id="close" onclick="closeModal()">
         &times
     </span>
     <ul>
         <li><%= link_to  "Home", root_path %></li>
         <% if logged_in? %>
             <li><%= link_to  "Profile", user_path(current_user) %></li>
-            <li><%= link_to  "Logout", logout_path %></li>
+            <li><%= link_to  "Logout", logout_path, method: :delete %></li>
         <% end %>
         <% unless logged_in? %>
             <li><%= link_to  "Login", login_path %></li>

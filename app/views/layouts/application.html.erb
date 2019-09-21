@@ -15,8 +15,8 @@
     <% end %>
 
     <%= render 'shared/nav' %>
-    <main>
       <%= render 'shared/modal' %>
+    <main>
       <%= yield %>
     </main>
       <% debug(params) if Rails.env.development? %>
