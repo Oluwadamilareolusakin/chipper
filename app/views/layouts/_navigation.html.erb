@@ -1,6 +1,6 @@
     <%= link_to image_tag('Logo.svg'), root_path, class: 'logo' %>
     <div class="nav-user-actions row">
-            <span class="menu-bar"><%= fa_icon "bars"%></span>
+            <span id="menu-bar"><%= fa_icon "bars"%></span>
             <div class="row">
                 <%= render 'shared/nav_actions' %>
                 <%= render 'shared/logged_out_nav_actions' %>

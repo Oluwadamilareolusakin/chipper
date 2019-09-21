@@ -1,6 +1,6 @@
 modal = `document.getElementById('menu-modal')`
 closeButton = `document.getElementById('close')`
-menuIcon = `document.getElementsByClassName('menu-bar')`
+menuIcon = `document.querySelectorAll('#menu-bar')`
 
 `menuIcon.onclick = () =>{
     modal.style.display = "block";
