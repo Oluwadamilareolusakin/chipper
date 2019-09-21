@@ -1,7 +1,7 @@
 <% provide(:button_text, 'Reset password') %>
 <div class="form-container column">
     <h1 class=" center-aligned-text form-header-text">Enter your email to get reset instructions</h1>
-    <div class="user-admin-data-form row">
+    <div class="form row">
         <%= form_for(:reset, url: reset_path) do |f| %>
             <p>
                 <%= f.email_field :email, placeholder:'Email address' %>
