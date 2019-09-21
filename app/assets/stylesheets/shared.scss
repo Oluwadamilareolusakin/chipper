@@ -105,9 +105,10 @@ html{
 
 
 
+
 #modalMenu{
     background-color: $main-green;
-    opacity: .8;
+    opacity: .9;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -119,6 +120,7 @@ html{
     height: 100vh;
     z-index: 5;
     display: none;
+
     
     li{
         font-size: 7em;
