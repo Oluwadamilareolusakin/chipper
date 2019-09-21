@@ -1,9 +1,11 @@
-<% if controller.action_name == 'landing_page' %>  
-  <nav class="navigation row">
+  <% if controller.action_name == ' landing_page' %>  
+    <nav class="navigation row">
+        <%= render 'layouts/navigation' %>
+    </nav>
+  <% elsif controller.action_name != 'sign_up' && controller.action_name != 'sign_in' %>
+
+    <nav class="navigation-with--bg row">
       <%= render 'layouts/navigation' %>
-  </nav>
-<% elsif %>
-  <nav class="navigation-with--bg row">
-    <%= render 'layouts/navigation' %>
-  </nav>    
+    </nav>    
 <% end %>
+    

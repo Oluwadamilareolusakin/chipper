@@ -1,15 +1,16 @@
 <%provide(:title, 'Log in') %>
 <div class="form-container column">
-    <p class="signup-login-section">Don't have an account? <%= link_to  "Sign up", signup_path, class: 'signup-login-btn' %></p>
-    <h1 class=" center-aligned-text form-header-text">Login to Chipper</h1>
-    <div class="user-admin-data-form row">
+    <%= link_to image_tag('Logo.svg'), root_path, class: 'form-logo' %>
+    <h1 class=" center-aligned-text form-header-text">Login</h1>
+    <div class="form row">
         <%= form_for(:session, url: login_path) do |f| %>
-            <p><%= f.text_field :username_or_email, placeholder: "Username or Email Address" %></p>
-            <p><%= f.password_field :password, placeholder: 'Password' %></p>
-            <%= link_to  "Forgot password?", reset_path, class:'corner-form-link' %>
-            <div class="actions">
-                <p><%= f.submit 'Login'%></p>
-            </div>
+        <p><%= f.text_field :username_or_email, placeholder: "Username or Email Address" %></p>
+        <p><%= f.password_field :password, placeholder: 'Password' %></p>
+        <%= link_to  "Forgot password?", reset_path, class:'corner-form-link' %>
+        <div class="actions">
+            <p><%= f.submit 'Login'%></p>
+        </div>
         <% end %>
     </div>
+    <p class="signup-login-section">Don't have an account? <%= link_to  "Sign up", signup_path, class: 'signup-login-btn' %></p>
 </div>
