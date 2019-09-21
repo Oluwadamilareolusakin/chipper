@@ -1,10 +1,14 @@
 <%= provide(:title, 'Sign up') %>
 <% provide(:button_text, 'Sign up')%>
 
-<h1 class = "admin-users-table-title center-aligned-text">Create a Chipper Account</h1>
+<div class="form-container column">
+    <%= link_to image_tag('Logo.svg'), root_path, class: 'form-logo' %>
+    <h1 class = "form-header-text center-aligned-text">Create a Chipper Account</h1>
+    <%= render 'form', user: @user %>
+    
+    <p class="signup-login-section">
+       Already have an account ? <%= link_to 'Login', login_path, class:'signup-login-btn' %>
+    </p>
+</div>
 
-<%= render 'form', user: @user %>
 
-<p class="signup-login-section">
-   Already have an account ? <%= link_to 'Login', login_path, class:'signup-login-btn' %>
-</p>

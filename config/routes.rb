@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'static_pages#landing_page'
 
-  get '/login', to: 'sessions#new'
+  get '/login', to: 'sessions#sign_in'
   post '/login', to: 'sessions#create'
-  get '/signup', to: 'users#new'
+  get '/signup', to: 'users#sign_up'
   post '/signup', to: 'users#create'
 
   resources :posts 
