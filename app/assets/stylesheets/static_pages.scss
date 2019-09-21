@@ -20,17 +20,26 @@
     
 
     .landing-page-header{
-        font-size: 5em;
         color: rgb(34, 34, 34);
         line-height: 1.2em;
         font-family: 'Manjari', sans-serif;
+        font-size: 9em;
+        
+        @media #{$mq-medium}{
+            font-size: 5em;
+        }
     }
     
     .landing-page-subtext{
         margin: .3em 0 .4em 0;
-        font-size: 1.6em;
+        font-size: 3em;
         font-family: 'Manjari', sans-serif;
         color: $main-pink;
+        line-height: 1em;
+        
+        @media #{$mq-medium}{
+            font-size: 1.6em;
+        }
     }
     
     .hero-cta{
