@@ -1,7 +1,8 @@
 class SessionsController < ApplicationController
 
-  def new
+  def sign_in
     redirect_to timeline_path if logged_in?
+    render 'new'
   end
 
   def create

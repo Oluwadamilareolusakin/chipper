@@ -32,7 +32,7 @@ html{
 
     .logo{
         width: 160px;
-
+        display: inline-block;
         @media #{$mq-medium}{
            width: 130px; 
         }
@@ -45,15 +45,21 @@ html{
             margin-right: 1em;
             @extend %pink-button;
         }
+        
+       
+            .menu-bar{
+                font-size: 2.5em; 
+                display: inline;
 
-        .menu-bar{
-            display: none; 
-            font-size: 2.5em; 
-            display: inline;
-            @media #{$mq-medium}{
-                display: none; 
+                @media #{$mq-medium}{
+                    display: none; 
+                }
+
             }
+
+
         }
+
 
 
         a{
@@ -62,7 +68,7 @@ html{
                 display: inline;
             }
         }
-    }
+    
 
     .profile-btn{
         margin-right: 1em;
@@ -97,6 +103,39 @@ html{
     }
 }
 
+
+
+#menu-modal{
+    background-color: $main-green;
+    opacity: .8;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    z-index: 5;
+    display: none;
+    
+    li{
+        font-size: 7em;
+        margin-bottom: 1em;
+        font-family: $primary-font;
+        color: white;
+    }
+
+    span{
+        position: absolute;
+        top: 1em;
+        font-size: 5em;
+        color: white;
+        right: 1em;
+    }
+}
+
 .navigation{
     @extend %navigation;
 }
@@ -110,6 +149,8 @@ html{
 main{
     padding-top: 0em;
     box-sizing: border-box;
+    position: relative;
+    height: 91vh;
 }
 
 .center-aligned-text{
@@ -124,7 +165,7 @@ main{
     font-size: 1.5em;
 }
 
-.user-admin-data-form{
+.form{
     width: 100%;
     justify-content: center;
     padding: 1em 0 0 0;
@@ -177,7 +218,7 @@ main{
     }
     
     .corner-form-link{
-        text-decoration: underline;
+        // text-decoration: underline;  
         font-size: 1.7em;
         font-style: italic;
 
@@ -201,11 +242,39 @@ main{
     width: 100%;
     align-items: center;
 
-    .form-header-text{
-        font-size: 2em;
-        font-family: 'Manjari';
-        color: $main-green;
+    .form-logo{
+        width: 250px;
+        margin-bottom: 5em;
+
+        @media #{$mq-medium}{
+            margin-bottom: 1em;
+            width: 150px;
+        }
     }
+
+    .form-header-text{
+        font-size: 3em;
+        font-family: 'Manjari';
+        color: black;
+
+        @media #{$mq-medium}{
+            font-size: 1.8em;
+        }
+    }
+}
+
+.signup-login-section{
+    font-family: 'Manjari';
+    font-size: 2.5em;
+    margin-top: 2em;
+
+    @media #{$mq-medium}{   
+        position: absolute;
+        top: 0em;
+        right: 2em;
+        font-size: 1em;
+    }
+
 }
 
 .new-admin-user-button-container{
