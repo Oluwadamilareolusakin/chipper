@@ -1,0 +1,4 @@
+<% unless logged_in? %>
+    <p><%= link_to  "Login", login_path, class: 'nav-login-btn' %></p>
+    <p><%= link_to  "Sign up", signup_path, class: 'nav-signup-btn' %></p>
+<% end %>
